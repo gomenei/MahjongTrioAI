@@ -306,7 +306,7 @@ def check_standard_hand(counts: TypingCounter[str], n3_patterns, n3p2_patterns) 
 
         if n_key not in patterns_to_use:
             # The required number of melds (N) doesn't exist in the patterns file
-            print(f"DEBUG: N={n_key} not found in {'3np2' if needs_comp_pair else '3n'} patterns for component {comp_seq}")
+            #print(f"DEBUG: N={n_key} not found in {'3np2' if needs_comp_pair else '3n'} patterns for component {comp_seq}")
             return False
 
         valid_sequences_for_n = patterns_to_use[n_key]
@@ -789,7 +789,7 @@ def calculate_fan(decomposition: Dict[str, Any],
                 return False
         for tile in alls_tiles:
             num, suit = tile[0], tile[1]
-            if (suit == 'z' and pure) or num in ['4', '5','6']:
+            if (suit == 'z' and pure) or (num in ['4', '5','6'] and suit != "z"):
                 return False
         # 步骤2：生成候选雀头
         temp_counts = all_tiles_counts.copy()
@@ -814,8 +814,7 @@ def calculate_fan(decomposition: Dict[str, Any],
                                 new_counts = counts.copy()
                                 for t in seq:
                                     new_counts[t] -= 1
-                                    if new_counts[t] == 0:
-                                        del new_counts[t]
+                                    if new_counts[t] == 0:del new_counts[t]
                                 if check_remaining(new_counts):
                                     return True
                 # 尝试刻子
@@ -830,10 +829,9 @@ def calculate_fan(decomposition: Dict[str, Any],
         for jantou in candidates:
             temps_counts = temp_counts.copy()
             temps_counts[jantou] -= 2
-            if temp_counts[jantou] == 0:
-                del temp_counts[jantou]
+            if temps_counts[jantou] == 0: del temps_counts[jantou]
             # 步骤4：检查剩余牌能否组成4个有效面子
-            if check_remaining(temp_counts):
+            if check_remaining(temps_counts):
                 return True
         return False
     if is_chanta(outer_melds, True): 
@@ -1010,13 +1008,13 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "111789m123p11s11z",  # Example hand (missing East wind for pair)
-        "jinzhang": "1z",          # Drawing the East wind completes pair and triplet
+        "inner": "11223399s44477z",  # Example hand (missing East wind for pair)
+        "jinzhang": "7z",          # Drawing the East wind completes pair and triplet
         "outer": "",               # No open melds
-        "selfwind": 0,             # East
-        "placewind": 0,            # East
-        "dora": "1p",
-        "innerdora": "",
+        "selfwind": 1,             # East
+        "placewind": 1,            # East
+        "dora": "3s",
+        "innerdora": "2m",
         "beidora": 0,
         "isReach": True,
         "isWReach": False,
