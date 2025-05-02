@@ -89,6 +89,101 @@ def load_patterns():
         PATTERN_LOAD_ERROR = True
         return False
 
+def check_standard_hand_3n(counts: TypingCounter[str], n3_patterns) -> bool:
+    """检查给定的牌（用计数表示）是否可以形成标准手牌,3*N+2"""
+    global PATTERNS_LOADED, PATTERN_LOAD_ERROR
+    if not PATTERNS_LOADED:
+      raise RuntimeError("Failed to load necessary pattern files for hand evaluation.")
+    total_tiles = sum(counts.values())
+    if total_tiles % 3 != 0:
+        return False
+    if any(count > 4 for count in counts.values()):
+        return False
+    # --- 1. Separate Honors and Numbers, Process Honors ---
+    number_components_raw = {'m': {}, 'p': {}, 's': {}}
+    num_honor_triplets = 0
+    current_counts = counts.copy() # Work with a copy
+    honor_keys_to_remove = []
+    for tile, count in current_counts.items():
+        num, suit = tile[0],tile[1]
+        if suit == 'z':
+            honor_keys_to_remove.append(tile)
+            if count == 3:
+                num_honor_triplets += 1
+            else:
+                return False
+        elif suit in ['m', 'p', 's']:
+            if count > 0: # Only add tiles present
+                number_components_raw[suit][num] = count
+    # --- 3. Group Number Tiles into Connected Components ---
+    number_components = [] # List of components: {'suit': str, 'start': int, 'seq': str, 'count': int}
+    for suit in ['m', 'p', 's']:
+        if not number_components_raw[suit]:
+            continue
+        sorted_nums = sorted(number_components_raw[suit].keys())
+        current_component_start = -1
+        current_sequence = []
+        current_tile_count = 0
+        for i, num in enumerate(sorted_nums):
+            count = number_components_raw[suit][num]
+            if count > 4: return False # Redundant check, but safe
+            if current_component_start == -1: # Start of a new component
+                current_component_start = num
+                current_sequence.append(str(count))
+                current_tile_count += count
+            elif int(num) == int(sorted_nums[i-1]) + 1: # Continues the current component
+                current_sequence.append(str(count))
+                current_tile_count += count
+            else: # Gap found, end previous component and start new one
+                # Store previous component
+                number_components.append({
+                    'suit': suit,
+                    'start': current_component_start,
+                    'seq': "".join(current_sequence),
+                    'count': current_tile_count
+                })
+                # Start new component
+                current_component_start = num
+                current_sequence = [str(count)]
+                current_tile_count = count
+        # Store the last component for the suit
+        if current_component_start != -1:
+            number_components.append({
+                'suit': suit,
+                'start': current_component_start,
+                'seq': "".join(current_sequence),
+                'count': current_tile_count
+            })
+    
+    # --- 4. Validate Component Sizes ---
+    total_number_component_tiles = 0
+    for comp in number_components:
+        comp_count = comp['count']
+        total_number_component_tiles += comp_count
+        if comp_count % 3 != 0:
+             return False
+    
+    # Check if total tiles match accounted tiles
+    if total_number_component_tiles + 3* num_honor_triplets != total_tiles:
+         print(f"DEBUG: Tile count mismatch. Total={total_tiles}, AccountedHonor={3* num_honor_triplets}, AccountedNumber={total_number_component_tiles}")
+         return False # Should not happen if logic is correct
+
+    # --- 5. Check Topological Sequences against Patterns ---
+    for comp in number_components:
+        comp_count = comp['count']
+        comp_seq = comp['seq']
+        n = comp_count // 3
+        n_key = str(n)
+        if n < 0: return False # Invalid component size resulted in N<0
+        if n_key not in n3_patterns:
+            # The required number of melds (N) doesn't exist in the patterns file
+            # print(f"DEBUG: N={n_key} not found in {'3n'} patterns for component {comp_seq}")
+            return False
+        valid_sequences_for_n = n3_patterns[n_key]
+        if comp_seq not in valid_sequences_for_n:
+            return False
+    # If all checks passed
+    return {"type": "standard", "number_components": number_components}
 
 def check_standard_hand(counts: TypingCounter[str], n3_patterns, n3p2_patterns) -> bool:
     """检查给定的牌（用计数表示）是否可以形成标准手牌,3*N+2"""
@@ -267,47 +362,105 @@ def check_special_hands(counts: collections.Counter) -> Optional[Dict[str, Any]]
 
 # --- Score Calculation Logic ---
 
-def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_melds: List[Dict]) -> int:
-    fu = 20
-    win_type = decomposition.get("type", "unknown")
-    if win_type == "chiitoitsu":
-        fu = 25
+def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_melds: List[Dict],all_tiles: List[str], pinhe: bool) -> int:
+    if decomposition:
+        win_type = decomposition.get("type", "unknown")
+        if win_type == "chiitoitsu":return 25
+        if win_type == "kokushi":return 20
+        # 1 底符
+        fu = 20
+        # 2 手牌
+        yaojiu = {"1m","9m","1s","9s","1p","9p","1z","2z","3z","4z","5z", "6z", "7z"}
+        all_tiles_counts = get_tile_counts(all_tiles)
+        open_minkou = 0
+        for meld in outer_melds:
+            if meld.get("type") == "minkou":
+                open_minkou += (1 + meld.get("tiles")[0] in yaojiu)
+        def cal_closed_ankou(counts):
+            suits = {'m','p','s','z'}
+            depth = [0]
+            for suit in suits:
+                for num in range(1,10-2*(suit=='z')):
+                    t = f"{num}{suit}"
+                    if counts.get(t,0) >= 3:
+                        temp_counts = counts.copy()
+                        temp_counts[t] -= 3
+                        if temp_counts[t] == 0:del temp_counts[t]
+                        if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
+                            depth.append(cal_closed_ankou(temp_counts)+ 1 + (t in yaojiu)) 
+            return max(depth)
+        closed_ankou = cal_closed_ankou(all_tiles_counts)
+        open_minkan = 0
+        for meld in outer_melds:
+            if meld.get("type") == "minkan":
+                open_minkan += (1 + meld.get("tiles")[0] in yaojiu)
+        open_ankan = 0
+        for meld in outer_melds:
+            if meld.get("type") == "ankan":
+                open_minkan += (1 + meld.get("tiles")[0] in yaojiu)
+        mianzi = 2* open_minkou + 4 * closed_ankou + 8* open_minkan + 16* open_ankan
+        fu += mianzi
+        jantou = 0
+        if context['selfwind'] == context['placewind']:
+            t = f"{context['selfwind']+1}z"
+            if all_tiles_counts.get(t,0) == 2:jantou = 4
+        else:
+            for t in {f"{context['selfwind']+1}z",f"{context['placewind']+1}z","5z","6z","7z"}:
+                if all_tiles_counts.get(t,0) == 2:jantou = 2
+        fu += jantou
+        # 3 听牌
+        tinpai = 0
+        jinzhang = parse_tiles(context.get("jinzhang", ""))[0]
+        # 3.1 单骑听牌
+        if all_tiles_counts.get(jinzhang,0) >= 2:
+            temp_counts = all_tiles_counts.copy()
+            temp_counts[jinzhang] -= 2
+            if temp_counts[jinzhang] == 0:del temp_counts[jinzhang]
+            if check_standard_hand_3n(temp_counts,PATTERNS_3N): tinpai =2
+        # 3.2 边张听牌
+        if "z" not in jinzhang and ("3" in jinzhang or "7" in jinzhang):
+            suit = jinzhang[1]
+            if "3" in jinzhang:
+                seq_tiles = [f"1{suit}", f"2{suit}", f"3{suit}"]
+            else:
+                seq_tiles = [f"7{suit}", f"8{suit}", f"9{suit}"]
+            if all(all_tiles_counts.get(t,0) >= 1 for t in seq_tiles):
+                temp_counts = all_tiles_counts.copy()
+                for t in seq_tiles:
+                    temp_counts[t] -= 1
+                    if temp_counts[t] == 0:
+                        del temp_counts[t]
+                if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
+                    tinpai = 2
+        # 3.3 嵌张听牌
+        if "z" not in jinzhang and "1" not in jinzhang and "9" not in jinzhang:
+            suit = jinzhang[1]
+            num = int(jinzhang[0])
+            seq_tiles = [f"{num-1}{suit}", f"{num}{suit}", f"{num+1}{suit}"]
+            if all(all_tiles_counts.get(t,0) >= 1 for t in seq_tiles):
+                temp_counts = all_tiles_counts.copy()
+                for t in seq_tiles:
+                    temp_counts[t] -= 1
+                    if temp_counts[t] == 0:
+                        del temp_counts[t]
+                if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
+                    tinpai = 2
+        fu += tinpai
+        # 4 和牌
+        def is_menzen_clear(outer_melds):
+            for meld in outer_melds:
+                # 如果存在非暗杠的副露，则门前清失效
+                if meld["type"] not in ["ankan"]:
+                    return False
+            return True
+        is_menzen = is_menzen_clear(outer_melds) # 是否门清
+        if (not pinhe) and context.get("isTsumo", False): fu += 2
+        if is_menzen and (not context.get("isTsumo", True)): fu += 10
+        if pinhe and is_menzen: fu = 20
+        if not is_menzen and fu<30:fu=30
         return fu
-    
-    if win_type == "standard":
-        fu = 20 # Base Fu
-
-        # --- Placeholder Fu Additions ---
-        # Add fu for open/closed state (Menzen Ron: +10, Tsumo: +2 - but Pinfu exception)
-        # Add fu for waits (Penchan, Kanchan, Tanki: +2)
-        # Add fu for pair (Jantou) value (Yakuhai pair: +2 or +4 for double wind)
-        # Add fu for melds (Mentsu)
-        #   - Open simple triplet: +2
-        #   - Closed simple triplet: +4
-        #   - Open terminal/honor triplet: +4
-        #   - Closed terminal/honor triplet: +8
-        #   - Open simple quad: +8
-        #   - Closed simple quad: +16
-        #   - Open terminal/honor quad: +16
-        #   - Closed terminal/honor quad: +32
-
-        # Example placeholder additions:
-        if context.get("isTsumo", False):
-            # Pinfu exception needs to be handled here later
-             fu += 2 # Base Tsumo Fu (unless Pinfu)
-        else: # Ron
-             # Menzen Ron (closed hand) exception needs handling
-             fu += 10 # Base Ron Fu (add if hand is closed) - NEEDS menzen check
-
-        # Placeholder for meld fu (needs outer_melds info too)
-        # fu += ...
-
-        # Round up fu to nearest 10 (except for 25 from Chiitoitsu)
-        if fu != 0:
-             fu = ((fu + 9) // 10) * 10
-
-    # Kokushi doesn't usually calculate Fu.
-    return fu
+    else:
+        return 0
 
 
 def calculate_fan(decomposition: Dict[str, Any], 
@@ -808,7 +961,7 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
             else:  
                 parsed = parse_tiles(meld_str)
                 if len(parsed) == 3:
-                    melds.append({"type": "koutsu", "tiles": parsed})
+                    melds.append({"type": "minkou", "tiles": parsed})
         
         return melds, num_kan
 
@@ -841,7 +994,8 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
         win_decomposition = check_special_hands(closed_counts.copy()) # Use copy
     if win_decomposition:
         fan, yaku_list = calculate_fan(win_decomposition, context, outer_melds, all_closed_tiles)
-        fu = calculate_fu(win_decomposition, context, outer_melds)
+        pinhe  = "平和" in yaku_list
+        fu = calculate_fu(win_decomposition, context, outer_melds, all_closed_tiles, pinhe)
         return {
             "win": fan!=0,
             "decomposition": win_decomposition, # Include how the hand was broken down
@@ -856,7 +1010,7 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "19m19p19s1234567z",  # Example hand (missing East wind for pair)
+        "inner": "111789m123p11s11z",  # Example hand (missing East wind for pair)
         "jinzhang": "1z",          # Drawing the East wind completes pair and triplet
         "outer": "",               # No open melds
         "selfwind": 0,             # East
