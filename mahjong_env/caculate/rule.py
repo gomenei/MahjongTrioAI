@@ -221,7 +221,7 @@ def check_standard_hand(counts: TypingCounter[str], n3_patterns, n3p2_patterns) 
                 number_components_raw[suit][num] = count
     if num_honor_pairs > 1:
         return False
-    
+    # print(number_components_raw,num_honor_triplets,num_honor_pairs)
     # --- 2. Check Overall Structure Feasibility based on Honors ---
     needs_pair = (num_honor_pairs == 0)
 
@@ -265,7 +265,7 @@ def check_standard_hand(counts: TypingCounter[str], n3_patterns, n3p2_patterns) 
                 'seq': "".join(current_sequence),
                 'count': current_tile_count
             })
-    
+    #print(number_components)
     # --- 4. Validate Component Sizes ---
     num_components_need_pair = 0
     total_number_component_tiles = 0
@@ -375,7 +375,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         open_minkou = 0
         for meld in outer_melds:
             if meld.get("type") == "minkou":
-                open_minkou += (1 + meld.get("tiles")[0] in yaojiu)
+                open_minkou += (1 + (meld.get("tiles")[0] in yaojiu))
         def cal_closed_ankou(counts):
             suits = {'m','p','s','z'}
             depth = [0]
@@ -393,11 +393,11 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         open_minkan = 0
         for meld in outer_melds:
             if meld.get("type") == "minkan":
-                open_minkan += (1 + meld.get("tiles")[0] in yaojiu)
+                open_minkan += (1 + (meld.get("tiles")[0] in yaojiu))
         open_ankan = 0
         for meld in outer_melds:
             if meld.get("type") == "ankan":
-                open_minkan += (1 + meld.get("tiles")[0] in yaojiu)
+                open_minkan += (1 + (meld.get("tiles")[0] in yaojiu))
         mianzi = 2* open_minkou + 4 * closed_ankou + 8* open_minkan + 16* open_ankan
         fu += mianzi
         jantou = 0
@@ -967,14 +967,13 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
     jinzhang = parse_tiles(input_data.get("jinzhang", ""))
     outer_melds, num_kan = parse_outer_melds(input_data.get("outer", ""))
 
+    #print(inner_tiles, jinzhang, outer_melds)
+
     context = input_data # Pass the whole dict for context
 
     # 1. Prepare Hand Representation
     # 计算总牌数 (杠按3张计算)
-    num_outer = sum(
-        3 if meld["type"] in ["ankan", "minkan"] else len(meld["tiles"])
-        for meld in outer_melds
-    )
+    num_outer = sum(3 for meld in outer_melds)
     total_tiles = len(inner_tiles) + len(jinzhang) + num_outer
     if total_tiles != 14:
         return {
@@ -988,6 +987,7 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
     # print(inner_tiles,jinzhang,outer_melds)
     # 2. Check for Winning Hand
     win_decomposition = check_standard_hand(closed_counts.copy(),PATTERNS_3N,PATTERNS_3NP2) # Use copy as check might modify counts
+    # print(win_decomposition)
     if (not win_decomposition) and (not outer_melds):
         win_decomposition = check_special_hands(closed_counts.copy()) # Use copy
     if win_decomposition:
@@ -1002,19 +1002,19 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
             "fu": fu,
         }
     else:
-        print("DEBUG: No winning decomposition found.")
+        #print("DEBUG: No winning decomposition found.")
         return {"win": False, "reason": "Hand does not form a winning shape."}
 
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "11223399s44477z",  # Example hand (missing East wind for pair)
-        "jinzhang": "7z",          # Drawing the East wind completes pair and triplet
-        "outer": "",               # No open melds
-        "selfwind": 1,             # East
-        "placewind": 1,            # East
-        "dora": "3s",
-        "innerdora": "2m",
+        "inner": "4p1p2p6p4p5p3p",  # Example hand (missing East wind for pair)
+        "jinzhang": "7p",          # Drawing the East wind completes pair and triplet
+        "outer": "111z 8888p",               # No open melds
+        "selfwind": 0,             # East
+        "placewind": 0,            # East
+        "dora": "1m9m",
+        "innerdora": "8p9s",
         "beidora": 0,
         "isReach": True,
         "isWReach": False,
