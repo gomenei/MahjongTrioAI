@@ -2,6 +2,7 @@ from enum import Enum, auto
 from dataclasses import dataclass
 from typing import List, Optional
 
+
 class Suit(Enum):
     Manzu = auto()
     Pinzu = auto()
@@ -17,8 +18,9 @@ class MeldType(Enum):
     Pon = auto()
     OpenKan = auto()
     ClosedKan = auto()
+    Pei = auto()
 
-@dataclass(order=True)  # 自动生成比较运算符
+@dataclass
 class Tile:
     suit: Suit
     value: int
@@ -34,7 +36,39 @@ class Tile:
     @property
     def is_terminal(self) -> bool:
         return not self.is_honor and (self.value == 1 or self.value == 9)
+
+    def get_dora(dora_idt: 'Tile') -> 'Tile':
+        if dora_idt.is_honor:
+            if dora_idt.value <= 4:
+                next_val = dora_idt.value % 4 + 1
+                return Tile(Suit.Honors, next_val)
+            else:
+                next_val = dora_idt.value + 1
+                if next_val > 7:
+                    next_val = 5
+                return Tile(Suit.Honors, next_val)
+        elif dora_idt.suit == Suit.Manzu:
+            return Tile(Suit.Manzu, 1 if dora_idt.value == 9 else 9)
+        else:
+            if dora_idt.value == 9:
+                next_val = 1
+            else:
+                next_val = dora_idt.value + 1
+            return Tile(dora_idt.suit, next_val)
+
     
+    def __eq__(self, other: 'Tile') -> bool:
+        return (self.value == other.value) and (self.suit == other.suit)
+
+    def __lt__(self, other: 'Tile') -> bool:
+        if self.suit != other.suit:
+            return self.suit.value < other.suit.value
+        if self.value == 5 and other.value == 5:
+            if self.is_red != other.is_red:
+                return other.is_red
+        
+        return self.value < other.value
+
     def __str__(self) -> str:
         """实现toString()功能"""
         if self.is_honor:
@@ -42,7 +76,7 @@ class Tile:
             return honor_names[self.value - 1]
         else:
             suit_names = {Suit.Manzu: "万", Suit.Pinzu: "筒", Suit.Souzu: "条"}
-            return f"{self.value}{suit_names[self.suit]}{'(红)' if self.is_red else ''}"
+            return f"{'红' if self.is_red else ''}{self.value}{suit_names[self.suit]}"
 @dataclass
 class Meld:
     type: MeldType

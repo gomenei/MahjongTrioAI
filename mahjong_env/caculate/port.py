@@ -1,5 +1,5 @@
-from rule import evaluate_hand, load_patterns
-from tile import Tile, Suit, Wind, Meld, MeldType
+from mahjong_env.caculate.rule import evaluate_hand, load_patterns
+from mahjong_env.tile import Tile, Suit, Wind, Meld, MeldType
 from typing import List
 
 def _tile_to_str(tile: Tile) -> str:
@@ -29,7 +29,7 @@ def _parse_melds(pack: List[Meld]) -> str:
             meld_strs.append("".join([_tile_to_str(t) for t in tiles]))
         elif meld.type == MeldType.Pon:  # 刻子
             meld_strs.append("".join([_tile_to_str(t) for t in tiles]))
-    return " ".join(meld_strs)
+    return "".join(meld_strs)
 
 
 #计算番数和符数
