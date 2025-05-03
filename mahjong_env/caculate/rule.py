@@ -423,7 +423,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
             if temp_counts[jinzhang] == 0:del temp_counts[jinzhang]
             if check_standard_hand_3n(temp_counts,PATTERNS_3N): tinpai =2
         # 3.2 边张听牌
-        if "z" not in jinzhang and ("3" in jinzhang or "7" in jinzhang):
+        if ("z" not in jinzhang) and ("3" in jinzhang or "7" in jinzhang) and (not pinhe):
             suit = jinzhang[1]
             if "3" in jinzhang:
                 seq_tiles = [f"1{suit}", f"2{suit}", f"3{suit}"]
@@ -438,7 +438,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                 if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
                     tinpai = 2
         # 3.3 嵌张听牌
-        if "z" not in jinzhang and "1" not in jinzhang and "9" not in jinzhang:
+        if ("z" not in jinzhang) and ("1" not in jinzhang) and ("9" not in jinzhang) and (not pinhe):
             suit = jinzhang[1]
             num = int(jinzhang[0])
             seq_tiles = [f"{num-1}{suit}", f"{num}{suit}", f"{num+1}{suit}"]
@@ -451,7 +451,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                 if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
                     tinpai = 2
         fu += tinpai
-        #print(mianzi,jantou,tinpai,fu)
+        print(mianzi,jantou,tinpai,fu)
         # 4 和牌
         def is_menzen_clear(outer_melds):
             for meld in outer_melds:
@@ -461,9 +461,9 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
             return True
         is_menzen = is_menzen_clear(outer_melds) # 是否门清
         if (not pinhe) and context.get("isTsumo", False): fu += 2
-        #print(fu)
+        print(fu)
         if is_menzen and (not context.get("isTsumo", True)): fu += 10
-        #print(fu)
+        print(fu)
         if pinhe and is_menzen and context.get("isTsumo", False): fu = 20
         if (not is_menzen) and fu<30:fu=30
         return math.ceil(fu / 10) * 10
@@ -1017,17 +1017,17 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "8s1z7s7z7z1z9s",  # Example hand (missing East wind for pair)
-        "jinzhang": "7z",          # Drawing the East wind completes pair and triplet
-        "outer": "666z 111s",               # No open melds
-        "selfwind": 1,             # East
-        "placewind": 0,            # East
-        "dora": "5s",
-        "innerdora": "3s'",
+        "inner": "5s5p6s4s3s5s3p1p2p1p7s1p4p",  # Example hand (missing East wind for pair)
+        "jinzhang": "3p",          # Drawing the East wind completes pair and triplet
+        "outer": "",               # No open melds
+        "selfwind": 2,             # East
+        "placewind": 1,            # East
+        "dora": "9m",
+        "innerdora": "6z'",
         "beidora": 1,
-        "isReach": False,
+        "isReach": True,
         "isWReach": False,
-        "isYiFa": False,
+        "isYiFa": True,
         "isTsumo": False,
         "haidi": False,
         "hedi": False,
