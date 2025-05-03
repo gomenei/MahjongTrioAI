@@ -391,6 +391,8 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                         if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
                             if t!=jinzhang or (context.get("isTsumo", False) or counts.get(t,0)> 3):
                                 depth.append(cal_closed_ankou(temp_counts)+ 1 + (t in yaojiu)) 
+                            else:
+                                depth.append(0.5*(cal_closed_ankou(temp_counts)+ 1 + (t in yaojiu))) 
             return max(depth)
         closed_ankou = cal_closed_ankou(all_tiles_counts)
         open_minkan = 0
@@ -1015,15 +1017,15 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "7s7s4p6s5s3p5s6s4s6p5p1p2p",  # Example hand (missing East wind for pair)
-        "jinzhang": "7s",          # Drawing the East wind completes pair and triplet
-        "outer": "",               # No open melds
-        "selfwind": 2,             # East
+        "inner": "8s1z7s7z7z1z9s",  # Example hand (missing East wind for pair)
+        "jinzhang": "7z",          # Drawing the East wind completes pair and triplet
+        "outer": "666z 111s",               # No open melds
+        "selfwind": 1,             # East
         "placewind": 0,            # East
-        "dora": "6p",
-        "innerdora": "1z'",
-        "beidora": 0,
-        "isReach": True,
+        "dora": "5s",
+        "innerdora": "3s'",
+        "beidora": 1,
+        "isReach": False,
         "isWReach": False,
         "isYiFa": False,
         "isTsumo": False,
