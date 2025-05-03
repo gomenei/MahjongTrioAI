@@ -751,7 +751,8 @@ def calculate_fan(decomposition: Dict[str, Any],
     if "两杯口 3" not in yaku_list:
         closed_ankou = sum(1 for cnt in all_tiles_counts.values() if cnt >= 3)
         open_ankou = sum(1 for meld in outer_melds if meld.get("type") == "ankan")
-        if ((closed_ankou + open_ankou)-(all_tiles_counts.get(jinzhang,0)==3)) >= 3:
+        #print(closed_ankou,open_ankou,(all_tiles_counts.get(jinzhang,0)==3))
+        if ((closed_ankou + open_ankou)-(all_tiles_counts.get(jinzhang,0)==3 and (not context.get("isTsumo", False)))) >= 3:
             yaku_list.append("三暗刻 2")
             fan += 2
             if "一杯口 1" in yaku_list:yaku_list.remove("一杯口 1");fan-=1
@@ -1018,18 +1019,18 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "6p3z8p3z5p4p3z7p2p3p",  # Example hand (missing East wind for pair)
-        "jinzhang": "5p",          # Drawing the East wind completes pair and triplet
-        "outer": "5555z",               # No open melds
-        "selfwind": 2,             # East
+        "inner": "6p7s6p2z2z7s7s",  # Example hand (missing East wind for pair)
+        "jinzhang": "6p",          # Drawing the East wind completes pair and triplet
+        "outer": "0110p 999s",               # No open melds
+        "selfwind": 0,             # East
         "placewind": 1,            # East
-        "dora": "9m",
-        "innerdora": "6z'",
-        "beidora": 1,
-        "isReach": True,
+        "dora": "7s5s",
+        "innerdora": "7z3s",
+        "beidora": 2,
+        "isReach": False,
         "isWReach": False,
-        "isYiFa": True,
-        "isTsumo": False,
+        "isYiFa": False,
+        "isTsumo": True,
         "haidi": False,
         "hedi": False,
         "isLingShang": False,
