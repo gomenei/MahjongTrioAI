@@ -415,7 +415,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         # 3 听牌
         tinpai = 0
         # 3.1 单骑听牌
-        if all_tiles_counts.get(jinzhang,0) >= 2:
+        if all_tiles_counts.get(jinzhang,0) >= 2 and (not pinhe):
             temp_counts = all_tiles_counts.copy()
             temp_counts[jinzhang] -= 2
             if temp_counts[jinzhang] == 0:del temp_counts[jinzhang]
@@ -461,8 +461,9 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         if (not pinhe) and context.get("isTsumo", False): fu += 2
         #print(fu)
         if is_menzen and (not context.get("isTsumo", True)): fu += 10
-        if pinhe and is_menzen: fu = 20
-        if not is_menzen and fu<30:fu=30
+        #print(fu)
+        if pinhe and is_menzen and context.get("isTsumo", False): fu = 20
+        if (not is_menzen) and fu<30:fu=30
         return math.ceil(fu / 10) * 10
     else:
         return 0
@@ -511,7 +512,7 @@ def calculate_fan(decomposition: Dict[str, Any],
         if decomposition.get("type") != "standard": return False
         # 雀头不能是役牌
         tile_set = set(alls_tiles)
-        if yakuhai.isdisjoint(tile_set): return False
+        if not yakuhai.isdisjoint(tile_set): return False
         if any(alls_tiles_counts.get(t, 0)>=3 for t in {"1z","2z","3z","4z","5z", "6z", "7z"}): return False
         # 所有面子必须是顺子
         closed_counts = all_tiles_counts
@@ -998,7 +999,7 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
         win_decomposition = check_special_hands(closed_counts.copy()) # Use copy
     if win_decomposition:
         fan, yaku_list = calculate_fan(win_decomposition, context, outer_melds, all_closed_tiles)
-        pinhe  = "平和" in yaku_list
+        pinhe  = "平和 1" in yaku_list
         fu = calculate_fu(win_decomposition, context, outer_melds, all_closed_tiles, pinhe)
         return {
             "win": fan!=0,
@@ -1014,15 +1015,15 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "'1p7p7p7s1p5z5z7s1p5z",  # Example hand (missing East wind for pair)
-        "jinzhang": "7p",          # Drawing the East wind completes pair and triplet
-        "outer": "444p",               # No open melds
-        "selfwind": 1,             # East
+        "inner": "7s7s4p6s5s3p5s6s4s6p5p1p2p",  # Example hand (missing East wind for pair)
+        "jinzhang": "7s",          # Drawing the East wind completes pair and triplet
+        "outer": "",               # No open melds
+        "selfwind": 2,             # East
         "placewind": 0,            # East
-        "dora": "3z",
-        "innerdora": "2z'",
+        "dora": "6p",
+        "innerdora": "1z'",
         "beidora": 0,
-        "isReach": False,
+        "isReach": True,
         "isWReach": False,
         "isYiFa": False,
         "isTsumo": False,
