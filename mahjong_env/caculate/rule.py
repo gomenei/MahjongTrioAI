@@ -525,9 +525,9 @@ def calculate_fan(decomposition: Dict[str, Any],
             return False
         num, suit = int(jinzhang[0]), jinzhang[1]
         possible_shuntsu = []
-        if num <= 7:
+        if num <= 6:
             possible_shuntsu.append([jinzhang, f"{num+1}{suit}", f"{num+2}{suit}"])
-        if num >= 3:
+        if num >= 4:
             possible_shuntsu.append([f"{num-2}{suit}", f"{num-1}{suit}", jinzhang])
         def is_pinfu_ryanmen():
             for shuntsu in possible_shuntsu:
