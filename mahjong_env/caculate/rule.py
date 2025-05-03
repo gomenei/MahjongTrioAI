@@ -377,6 +377,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         for meld in outer_melds:
             if meld.get("type") == "minkou":
                 open_minkou += (1 + (meld.get("tiles")[0] in yaojiu))
+        jinzhang = parse_tiles(context.get("jinzhang", ""))[0]
         def cal_closed_ankou(counts):
             suits = {'m','p','s','z'}
             depth = [0]
@@ -388,7 +389,8 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                         temp_counts[t] -= 3
                         if temp_counts[t] == 0:del temp_counts[t]
                         if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
-                            depth.append(cal_closed_ankou(temp_counts)+ 1 + (t in yaojiu)) 
+                            if t!=jinzhang or (context.get("isTsumo", False) or counts.get(t,0)> 3):
+                                depth.append(cal_closed_ankou(temp_counts)+ 1 + (t in yaojiu)) 
             return max(depth)
         closed_ankou = cal_closed_ankou(all_tiles_counts)
         open_minkan = 0
@@ -400,6 +402,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
             if meld.get("type") == "ankan":
                 open_minkan += (1 + (meld.get("tiles")[0] in yaojiu))
         mianzi = 2* open_minkou + 4 * closed_ankou + 8* open_minkan + 16* open_ankan
+        #print(open_minkou,closed_ankou,open_minkan,open_ankan)
         fu += mianzi
         jantou = 0
         if context['selfwind'] == context['placewind']:
@@ -411,7 +414,6 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         fu += jantou
         # 3 听牌
         tinpai = 0
-        jinzhang = parse_tiles(context.get("jinzhang", ""))[0]
         # 3.1 单骑听牌
         if all_tiles_counts.get(jinzhang,0) >= 2:
             temp_counts = all_tiles_counts.copy()
@@ -745,7 +747,7 @@ def calculate_fan(decomposition: Dict[str, Any],
     if "两杯口 3" not in yaku_list:
         closed_ankou = sum(1 for cnt in all_tiles_counts.values() if cnt >= 3)
         open_ankou = sum(1 for meld in outer_melds if meld.get("type") == "ankan")
-        if (closed_ankou + open_ankou) >= 3:
+        if ((closed_ankou + open_ankou)-(all_tiles_counts.get(jinzhang,0)==3)) >= 3:
             yaku_list.append("三暗刻 2")
             fan += 2
             if "一杯口 1" in yaku_list:yaku_list.remove("一杯口 1");fan-=1
@@ -1012,18 +1014,18 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "'7s0p6p1z4p1z8s",  # Example hand (missing East wind for pair)
-        "jinzhang": "9s",          # Drawing the East wind completes pair and triplet
-        "outer": "777z 999p",               # No open melds
-        "selfwind": 2,             # East
+        "inner": "'1p7p7p7s1p5z5z7s1p5z",  # Example hand (missing East wind for pair)
+        "jinzhang": "7p",          # Drawing the East wind completes pair and triplet
+        "outer": "444p",               # No open melds
+        "selfwind": 1,             # East
         "placewind": 0,            # East
-        "dora": "5s8p",
-        "innerdora": "2s7p",
-        "beidora": 1,
+        "dora": "3z",
+        "innerdora": "2z'",
+        "beidora": 0,
         "isReach": False,
         "isWReach": False,
         "isYiFa": False,
-        "isTsumo": True,
+        "isTsumo": False,
         "haidi": False,
         "hedi": False,
         "isLingShang": False,
