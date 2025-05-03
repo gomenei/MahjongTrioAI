@@ -451,7 +451,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                 if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
                     tinpai = 2
         fu += tinpai
-        print(mianzi,jantou,tinpai,fu)
+        #print(mianzi,jantou,tinpai,fu)
         # 4 和牌
         def is_menzen_clear(outer_melds):
             for meld in outer_melds:
@@ -461,9 +461,9 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
             return True
         is_menzen = is_menzen_clear(outer_melds) # 是否门清
         if (not pinhe) and context.get("isTsumo", False): fu += 2
-        print(fu)
+        #print(fu)
         if is_menzen and (not context.get("isTsumo", True)): fu += 10
-        print(fu)
+        #print(fu)
         if pinhe and is_menzen and context.get("isTsumo", False): fu = 20
         if (not is_menzen) and fu<30:fu=30
         return math.ceil(fu / 10) * 10
@@ -487,6 +487,7 @@ def calculate_fan(decomposition: Dict[str, Any],
     is_menzen = is_menzen_clear(outer_melds) # 是否门清
     jinzhang = parse_tiles(context.get("jinzhang", ""))[0]
     alls_tiles = all_tiles +  [tile for meld in outer_melds for tile in meld.get("tiles", [])]
+    #print(all_tiles,  outer_melds,alls_tiles)
     all_tiles_counts = get_tile_counts(all_tiles)
     alls_tiles_counts = get_tile_counts(alls_tiles)
 
@@ -891,7 +892,7 @@ def calculate_fan(decomposition: Dict[str, Any],
         else:fan += 6 - (not is_menzen);yaku_list.append(f"清一色 {6 - (not is_menzen)}")
     
     # 3. Dora calculation
-    all_hand_tiles = alls_tiles + ["4z"]*context.get("beidora", 0)
+    all_hand_tiles = alls_tiles + ["4z"]*context.get("beidora", 0) + [meld.get("tiles")[0] for meld in outer_melds if (meld.get("type") == "ankan" or meld.get("type") == "minkan")]
     dora_indicators = parse_tiles(context.get("dora", ""))
     inner_dora_indicators = parse_tiles(context.get("innerdora", ""))
     ndora,ninnerdora,nreddora,nbeidora = 0,0,0,0
@@ -959,8 +960,8 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
             # 解析普通杠 4444m → 明杠
             elif len(meld_str) == 5:
                 parsed = parse_tiles(meld_str)
-                num = parsed[0]
-                suit = parsed[-1]
+                num = parsed[0][0]
+                suit = parsed[0][1]
                 melds.append({"type": "minkan", "tiles": [f"{num}{suit}"]*3})
                 num_kan += 1
             
@@ -1017,9 +1018,9 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "5s5p6s4s3s5s3p1p2p1p7s1p4p",  # Example hand (missing East wind for pair)
-        "jinzhang": "3p",          # Drawing the East wind completes pair and triplet
-        "outer": "",               # No open melds
+        "inner": "6p3z8p3z5p4p3z7p2p3p",  # Example hand (missing East wind for pair)
+        "jinzhang": "5p",          # Drawing the East wind completes pair and triplet
+        "outer": "5555z",               # No open melds
         "selfwind": 2,             # East
         "placewind": 1,            # East
         "dora": "9m",
