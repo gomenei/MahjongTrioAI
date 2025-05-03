@@ -447,6 +447,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
                 if check_standard_hand(temp_counts,PATTERNS_3N,PATTERNS_3NP2):
                     tinpai = 2
         fu += tinpai
+        #print(mianzi,jantou,tinpai,fu)
         # 4 和牌
         def is_menzen_clear(outer_melds):
             for meld in outer_melds:
@@ -456,6 +457,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
             return True
         is_menzen = is_menzen_clear(outer_melds) # 是否门清
         if (not pinhe) and context.get("isTsumo", False): fu += 2
+        #print(fu)
         if is_menzen and (not context.get("isTsumo", True)): fu += 10
         if pinhe and is_menzen: fu = 20
         if not is_menzen and fu<30:fu=30
@@ -912,13 +914,14 @@ def calculate_fan(decomposition: Dict[str, Any],
     outer_str = context.get("outer","")
     nreddora += (count_red_balls(outer_str) + pilestr.count("0"))
     nbeidora += context.get("beidora", 0)
+    if not context.get("isReach", False): ninnerdora =0
     dora_count = ndora+ninnerdora+nreddora+nbeidora
     if fan > 0:
         fan += dora_count
         if ndora: yaku_list.append(f"宝牌 {ndora}")
         if context.get("isReach", False): yaku_list.append(f"里宝牌 {ninnerdora}")
         if nreddora: yaku_list.append(f"红宝牌 {nreddora}")
-        if nbeidora: yaku_list.append(f"里宝牌 {nbeidora}")
+        if nbeidora: yaku_list.append(f"北宝牌 {nbeidora}")
     return fan, yaku_list
 
 
@@ -1009,15 +1012,15 @@ def evaluate_hand(input_data: Dict[str, Any]) -> Dict[str, Any]:
 # --- Example Usage ---
 if __name__ == "__main__":
     test_input = {
-        "inner": "4p1p2p6p4p5p3p",  # Example hand (missing East wind for pair)
-        "jinzhang": "7p",          # Drawing the East wind completes pair and triplet
-        "outer": "111z 8888p",               # No open melds
-        "selfwind": 0,             # East
+        "inner": "'7s0p6p1z4p1z8s",  # Example hand (missing East wind for pair)
+        "jinzhang": "9s",          # Drawing the East wind completes pair and triplet
+        "outer": "777z 999p",               # No open melds
+        "selfwind": 2,             # East
         "placewind": 0,            # East
-        "dora": "1m9m",
-        "innerdora": "8p9s",
-        "beidora": 0,
-        "isReach": True,
+        "dora": "5s8p",
+        "innerdora": "2s7p",
+        "beidora": 1,
+        "isReach": False,
         "isWReach": False,
         "isYiFa": False,
         "isTsumo": True,
