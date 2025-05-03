@@ -1,6 +1,7 @@
 import json
 import collections
 import os
+import math
 from typing import List, Dict, Tuple, Optional, Any, Counter as TypingCounter
 
 # --- Tile Parsing and Utility Function ---
@@ -458,7 +459,7 @@ def calculate_fu(decomposition: Dict[str, Any], context: Dict[str, Any], outer_m
         if is_menzen and (not context.get("isTsumo", True)): fu += 10
         if pinhe and is_menzen: fu = 20
         if not is_menzen and fu<30:fu=30
-        return fu
+        return math.ceil(fu / 10) * 10
     else:
         return 0
 
