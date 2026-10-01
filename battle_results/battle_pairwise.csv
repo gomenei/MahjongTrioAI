@@ -1,0 +1,2 @@
+model_a,model_b,paired_seed_groups,mean_point_difference_a_minus_b,point_difference_ci95_low,point_difference_ci95_high,point_difference_ci95_half_width,mean_utility_difference_a_minus_b,utility_difference_ci95_low,utility_difference_ci95_high
+ppo_rich,tile_transformer,4000,1302.1125,1127.010547440859,1477.214452559141,175.10195255914093,0.1066875,0.09077280410283747,0.12260219589716254

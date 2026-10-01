@@ -1,0 +1,10 @@
+# MahjongTrioAI mode uses Python/PyTorch and does not require libriichi binaries.
+torch
+numpy
+mahjong==1.2.1
+mitmproxy==10.2.4
+playwright==1.62.0
+requests
+pillow
+tkhtmlview
+protobuf>=3.20,<5

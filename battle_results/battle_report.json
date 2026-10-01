@@ -1,0 +1,79 @@
+{
+  "completed": true,
+  "ranking_metric": "每次实际出场的平均点数收益",
+  "scoring": "雀魂段位三麻自摸损：荣和按标准日麻支付；自摸只收两家付款；每本场荣和200点、自摸每家100点；累计役满封顶单倍，役满可累计",
+  "secondary_metric": "零和收益：荣和=赢家+1/放铳者-1；自摸=赢家+1/另外两家各-0.5；流局=0",
+  "confidence": "平均点差使用95%正态近似；胜率使用 Wilson 区间",
+  "limitations": [
+    "当前环境没有完整半庄点数结算，因此不代表最终顺位率",
+    "当前环境一次只处理一个和牌者，不评估双响结果",
+    "独立小局的流局立直棒视为退回，不会带入下一局"
+  ],
+  "rankings": [
+    {
+      "model_name": "ppo_rich",
+      "hands": 18000,
+      "seed_groups": 4000,
+      "wins": 5273,
+      "win_rate": 0.29294444444444445,
+      "win_rate_ci95_low": 0.28634057033626603,
+      "win_rate_ci95_high": 0.29963667696125273,
+      "ron_wins": 3180,
+      "tsumo_wins": 2093,
+      "deal_ins": 2140,
+      "deal_in_rate": 0.11888888888888889,
+      "draw_rate": 0.1287222222222222,
+      "invalid_actions": 30,
+      "average_points": 620.65,
+      "points_ci95_low": 530.7922421016881,
+      "points_ci95_high": 710.5077578983119,
+      "points_ci95_half_width": 89.85775789831189,
+      "average_winning_points": 9125.886592072824,
+      "mean_utility": 0.05039583333333333,
+      "utility_ci95_low": 0.04229821202945909,
+      "utility_ci95_high": 0.058493454637207565,
+      "utility_ci95_half_width": 0.008097621303874238,
+      "rank": 1
+    },
+    {
+      "model_name": "tile_transformer",
+      "hands": 18000,
+      "seed_groups": 4000,
+      "wins": 5224,
+      "win_rate": 0.2902222222222222,
+      "win_rate_ci95_low": 0.2836371593316913,
+      "win_rate_ci95_high": 0.29689680519619455,
+      "ron_wins": 2880,
+      "tsumo_wins": 2344,
+      "deal_ins": 3920,
+      "deal_in_rate": 0.21777777777777776,
+      "draw_rate": 0.10827777777777778,
+      "invalid_actions": 51,
+      "average_points": -681.4625,
+      "points_ci95_low": -776.5835248110541,
+      "points_ci95_high": -586.3414751889459,
+      "points_ci95_half_width": 95.12102481105408,
+      "average_winning_points": 8413.150842266463,
+      "mean_utility": -0.05629166666666666,
+      "utility_ci95_low": -0.06499390863933782,
+      "utility_ci95_high": -0.047589424693995505,
+      "utility_ci95_half_width": 0.008702241972671157,
+      "rank": 2
+    }
+  ],
+  "pairwise": [
+    {
+      "model_a": "ppo_rich",
+      "model_b": "tile_transformer",
+      "paired_seed_groups": 4000,
+      "mean_point_difference_a_minus_b": 1302.1125,
+      "point_difference_ci95_low": 1127.010547440859,
+      "point_difference_ci95_high": 1477.214452559141,
+      "point_difference_ci95_half_width": 175.10195255914093,
+      "mean_utility_difference_a_minus_b": 0.1066875,
+      "utility_difference_ci95_low": 0.09077280410283747,
+      "utility_difference_ci95_high": 0.12260219589716254
+    }
+  ],
+  "publication_note": "Aggregate statistics only; checkpoints, paths, per-game records and diagnostic messages omitted."
+}

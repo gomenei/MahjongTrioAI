@@ -1,0 +1,5 @@
+numpy
+pygame
+torch
+mahjong==1.2.1
+tqdm

@@ -1,0 +1,2 @@
+model_a,model_b,paired_seed_groups,mean_point_difference_a_minus_b,point_difference_ci95_low,point_difference_ci95_high,point_difference_ci95_half_width,mean_utility_difference_a_minus_b,utility_difference_ci95_low,utility_difference_ci95_high
+legacy,rich,19664,-871.1554109031733,-944.6746517562407,-797.636170050106,73.51924085306739,-0.08398596419853539,-0.09089143123645879,-0.077080497160612

@@ -1,0 +1,1374 @@
+{
+  "format_version": 1,
+  "review_date": "2026-10-01",
+  "scope": "Sanma source, GUI resources, training code, Copilot and sanitized aggregate battle reports",
+  "git_history_included": false,
+  "file_count": 273,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 109,
+      "sha256": "72ef26b2a7946458e2d820831099f2a560c41f83fe51584f3772336030c3534f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1378,
+      "sha256": "b955e94848babf608f222cbf668561ef976c16a6a35dc16f1ee2ea9b4a7ae62f"
+    },
+    {
+      "path": "__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "analyze_ppo_history.py",
+      "bytes": 8205,
+      "sha256": "4688786003ff33f0de92795a60ee34f1a8816af2cd1b9dc71ad11787a4d2e5bb"
+    },
+    {
+      "path": "assets/tiles/0m.png",
+      "bytes": 30403,
+      "sha256": "9201751602f2610b0f40f8781f6538d7aaa31953065231c1202f4c0a5ee67841"
+    },
+    {
+      "path": "assets/tiles/0p.png",
+      "bytes": 49377,
+      "sha256": "4566466cba96925fa52c474a32ec1cac52450d89065e353b824eb6e2c0474067"
+    },
+    {
+      "path": "assets/tiles/0s.png",
+      "bytes": 31940,
+      "sha256": "255d4243505ab9889ca018a8a9b3d2c8ab54f3207dbc5bbb9674f6c303a48bf2"
+    },
+    {
+      "path": "assets/tiles/1m.png",
+      "bytes": 27302,
+      "sha256": "fadb07ee736915c46b38c9437a4108d015bdc5cfd9f6462a7e3ba54fb58b68b0"
+    },
+    {
+      "path": "assets/tiles/1p.png",
+      "bytes": 40171,
+      "sha256": "0e4e06206fce88e65dbf73d5909e8849da46b99efb1420bf7cd6b0a9edc11565"
+    },
+    {
+      "path": "assets/tiles/1s.png",
+      "bytes": 46534,
+      "sha256": "6aad12b94f997c13639ab8613d8551398771f7c39dcefd7fed92e31e5343ef3c"
+    },
+    {
+      "path": "assets/tiles/1z.png",
+      "bytes": 26634,
+      "sha256": "007d473462a00280a41a57fac650c17ac9c932344fa112b58be114a58c458191"
+    },
+    {
+      "path": "assets/tiles/2m.png",
+      "bytes": 28681,
+      "sha256": "ffc1dfaf922fb43baf0334525a7cbff956731862f557a87b4f1dd866b96ff02a"
+    },
+    {
+      "path": "assets/tiles/2p.png",
+      "bytes": 42556,
+      "sha256": "dd602b7364359e74e9cf23a07b9c37ac88cc292bf497f0569fb0c0434dc317ce"
+    },
+    {
+      "path": "assets/tiles/2s.png",
+      "bytes": 24506,
+      "sha256": "713032fa6ff9c5f7cf748b309e155ba8ecc5800ac053a89b224ab15d859b2ff4"
+    },
+    {
+      "path": "assets/tiles/2z.png",
+      "bytes": 26371,
+      "sha256": "fa69a4582ab634819057569a7e2b590f7caf14f1d51ce013a29fda402277e80b"
+    },
+    {
+      "path": "assets/tiles/3m.png",
+      "bytes": 29716,
+      "sha256": "549e260e42d7eee0ed194c93108b7f823b549b10863e0a2fda7f9904c0b6f896"
+    },
+    {
+      "path": "assets/tiles/3p.png",
+      "bytes": 35130,
+      "sha256": "954b8d6773f37f7219db3f12ba990dcea8e7b9d0835a8d995bf15e2318f0deca"
+    },
+    {
+      "path": "assets/tiles/3s.png",
+      "bytes": 27325,
+      "sha256": "8f35c3365699506038eef99b8591f7c380a26e070caa12d649c4246c5a634122"
+    },
+    {
+      "path": "assets/tiles/3z.png",
+      "bytes": 24979,
+      "sha256": "91c32064c389785103ccbd253c830e52d8bd19f85385e6215f188ca7827607da"
+    },
+    {
+      "path": "assets/tiles/4m.png",
+      "bytes": 29841,
+      "sha256": "0aeb79249b798f846bcb83cac4e3cd373ab2e382b52c32bf00528f6f36745da8"
+    },
+    {
+      "path": "assets/tiles/4p.png",
+      "bytes": 37526,
+      "sha256": "d9129a7adc2a6fa75c08d9a2f94111969f18535e01632c6b1b59fdb96f50af61"
+    },
+    {
+      "path": "assets/tiles/4s.png",
+      "bytes": 29512,
+      "sha256": "1ef564f2bd817c490f81f8701b5d24aa8fa3ccfea30c1b7fa4ee7d3ff7e96637"
+    },
+    {
+      "path": "assets/tiles/4z.png",
+      "bytes": 24005,
+      "sha256": "27cb5a818f1ec19388c4a2e9c43402d52580af05d6f35f2a656f9946a8577fa5"
+    },
+    {
+      "path": "assets/tiles/5m.png",
+      "bytes": 30507,
+      "sha256": "fb49608f139444177eb2563ce9824f20327150c46c0c5b85e1c4cc8604df0a6c"
+    },
+    {
+      "path": "assets/tiles/5p.png",
+      "bytes": 41752,
+      "sha256": "4d52bf027b4dda774c9ac20b50f543e58c56d70f42bd6b52ba8e210aa7c5ca5c"
+    },
+    {
+      "path": "assets/tiles/5s.png",
+      "bytes": 32239,
+      "sha256": "1334c94bece42d58506c90023d07ba7f692f2c4a5e8473908b10e85c9bdc45bd"
+    },
+    {
+      "path": "assets/tiles/5z.png",
+      "bytes": 18175,
+      "sha256": "480fc121a8916da87372aff0bf53c3a35658cf54a6d55126d2723c086bddeda3"
+    },
+    {
+      "path": "assets/tiles/6m.png",
+      "bytes": 29749,
+      "sha256": "c44e09409bb48db789ba78b3ca8cf1912959738d77d76baded6c43bdaebac33f"
+    },
+    {
+      "path": "assets/tiles/6p.png",
+      "bytes": 40214,
+      "sha256": "28a5e6dc347ba40a683349dcd0f75290b1ac584731936aa60bfcd41d080f27d4"
+    },
+    {
+      "path": "assets/tiles/6s.png",
+      "bytes": 34082,
+      "sha256": "f34945a613bdb7fa608443551ecbcbb629082c29804b7c17df6eedc4d5cb87d1"
+    },
+    {
+      "path": "assets/tiles/6z.png",
+      "bytes": 30067,
+      "sha256": "6a746146ef6d4abdc4cadbe37100e8fd56a7d31350a184e857cff7cf5ae087b9"
+    },
+    {
+      "path": "assets/tiles/7m.png",
+      "bytes": 28630,
+      "sha256": "0e16fc6650b91a49a95b2d19bdc4ec3dd54c09fc5e0985637f032d67e5a22045"
+    },
+    {
+      "path": "assets/tiles/7p.png",
+      "bytes": 43367,
+      "sha256": "89221063e5f44ebf2908dd2bdfdb2691df6083558b91657690fae17b898dbb90"
+    },
+    {
+      "path": "assets/tiles/7s.png",
+      "bytes": 32487,
+      "sha256": "d7c62ced9ba3ada31367439614eb7fcd7490be671a010cd236b69de686f71423"
+    },
+    {
+      "path": "assets/tiles/7z.png",
+      "bytes": 23392,
+      "sha256": "98ca4c5e16c451bf2d6c0fe51a528130bd269befab9fe0d55950649aa8019458"
+    },
+    {
+      "path": "assets/tiles/8m.png",
+      "bytes": 28680,
+      "sha256": "f655fd6afdf1058918ea512e57a4ef4f7ff072a90e222c8fb3de7f5c09c61f9f"
+    },
+    {
+      "path": "assets/tiles/8p.png",
+      "bytes": 45716,
+      "sha256": "fea31f4f559bac6613694c5a417dbb845121de1c9798f5a8cf75a8b441274281"
+    },
+    {
+      "path": "assets/tiles/8s.png",
+      "bytes": 35548,
+      "sha256": "1f3bd535da7b74b1f70328635f36acb790e9aa2144cc129d9743543c94c1bcd6"
+    },
+    {
+      "path": "assets/tiles/9m.png",
+      "bytes": 29465,
+      "sha256": "cd6dfc80c5a8dfd716f855d9c8ecd366d919e693dae400e07f68b200609e3aac"
+    },
+    {
+      "path": "assets/tiles/9p.png",
+      "bytes": 48417,
+      "sha256": "bc5bb6d4dee8e16b9e210517263aa294f33fe25f3b6421deec759c6b63f4af19"
+    },
+    {
+      "path": "assets/tiles/9s.png",
+      "bytes": 35574,
+      "sha256": "70db73c9eee1145f22d313a38c87630b9e273f475cabdbae882b84aacb31f172"
+    },
+    {
+      "path": "AUTODL_TRAINING.md",
+      "bytes": 928,
+      "sha256": "a9d9021429d2ac6822d891d32b6fa5b8e050bad38cbc648afc51b848047caed1"
+    },
+    {
+      "path": "battle_models.py",
+      "bytes": 44718,
+      "sha256": "f26408ce2667b14524ca4654954762c7d908280256b55e05f27fb53083386dd5"
+    },
+    {
+      "path": "battle_models_rules.py",
+      "bytes": 254,
+      "sha256": "859ba5698e6f7de29bd66ae275f557b24cbbf9127663fa30dde731b8664bea90"
+    },
+    {
+      "path": "battle_results/battle_pairwise.csv",
+      "bytes": 394,
+      "sha256": "ba04516eaf5bdcd7d7676f558e2c1ee50ad75cf60602445586e64616e3a59b11"
+    },
+    {
+      "path": "battle_results/battle_ranking.csv",
+      "bytes": 950,
+      "sha256": "319a437bc181959cc19c12e56a62cb8a1d8f2372faf068efea0e0617353ba557"
+    },
+    {
+      "path": "battle_results/battle_report.json",
+      "bytes": 3229,
+      "sha256": "f5a21ccb84291416a6c961e4b95bb7baa13c467deb33412b6fc07aebb9724ef6"
+    },
+    {
+      "path": "battle_results/copilot_vs_bc/battle_pairwise.csv",
+      "bytes": 429,
+      "sha256": "786f8c20a6e83b7e0a466d8c9d3bfcbca344bded4f44c28fe2cfc1fc170436e5"
+    },
+    {
+      "path": "battle_results/copilot_vs_bc/battle_ranking.csv",
+      "bytes": 971,
+      "sha256": "6d8df4a7a667ee2cd9e22883d603ab66c12f4c40f82fa82b788129882d40b9c6"
+    },
+    {
+      "path": "battle_results/copilot_vs_bc/battle_report.json",
+      "bytes": 3583,
+      "sha256": "8f65e976754bf872300147c9a63abcddc521a2e96fef373df3a2a9c7dabc1833"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260909/battle_pairwise.csv",
+      "bytes": 393,
+      "sha256": "2fb5731dcc3d958fc8d7e0a992170bbe258d30383e8acd0cfbfa6b96a460b269"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260909/battle_ranking.csv",
+      "bytes": 967,
+      "sha256": "a988f6179b09b103d468681f8450c43834d2f2e9bb3676dc363982b8c124bebc"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260909/battle_report.json",
+      "bytes": 3245,
+      "sha256": "76eb30aaa9d588388b74868a4dc84c657d3c5500ff731972b3783f080e80ab45"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260910/battle_pairwise.csv",
+      "bytes": 402,
+      "sha256": "c12fc50f0a3b222b20b87187f0cadfb159edba00305e3bc11e0970981b4aafc3"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260910/battle_ranking.csv",
+      "bytes": 978,
+      "sha256": "b05a270632cc2fbfeb2cf9d577f3e4d92126428156258f883f2b06f1472dada9"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260910/battle_report.json",
+      "bytes": 3265,
+      "sha256": "ce01cd6d2cfdd31687a41dabc210d801db767a0f21dee00fe8a4c5e18254b413"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260911/battle_pairwise.csv",
+      "bytes": 401,
+      "sha256": "ef17f98e1518f0b0aded924055830b5d11ae0950d1a0f29f99d1138f1e8174cc"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260911/battle_ranking.csv",
+      "bytes": 962,
+      "sha256": "9c24e101c7afd1daa6d37aa09e43a7fed8dfec666e185e3d7ca69bbf6b2a49b8"
+    },
+    {
+      "path": "battle_results/day01_03/full_u1000_h256_e256/pairwise_g5000_seed20261001/ppo_seed_20260911/battle_report.json",
+      "bytes": 3248,
+      "sha256": "30ed071741284dec29fe886f49d189f1171b2f4abc7af9dfd554ace42a218aa7"
+    },
+    {
+      "path": "battle_results/day01_03/rich_bc_vs_ppo_rich_seed20260909/battle_pairwise.csv",
+      "bytes": 389,
+      "sha256": "7b8c3ee3d1985e51275c12ab241bc60b759767705c32e27026ebc380347b3763"
+    },
+    {
+      "path": "battle_results/day01_03/rich_bc_vs_ppo_rich_seed20260909/battle_ranking.csv",
+      "bytes": 928,
+      "sha256": "04070cf084f92025478678064877336ccb16d2ddc6f66ae3f45f544ca114cee2"
+    },
+    {
+      "path": "battle_results/day01_03/rich_bc_vs_ppo_rich_seed20260909/battle_report.json",
+      "bytes": 3202,
+      "sha256": "44e432583dd8bf2582c65f18639d7a3f6de5c6cb482ad1e1761bf0c33eeba637"
+    },
+    {
+      "path": "battle_results/feature_ab/battle_pairwise.csv",
+      "bytes": 401,
+      "sha256": "28c04ae2e6cbc04a8919389ff4e8752e6c58efd57e833ee63a3f4471516cf565"
+    },
+    {
+      "path": "battle_results/feature_ab/battle_ranking.csv",
+      "bytes": 971,
+      "sha256": "161ed1fa9687897e55fdd8ed02c86548f3bc47dfc6acb0460413c87cc883a7e1"
+    },
+    {
+      "path": "battle_results/feature_ab/battle_report.json",
+      "bytes": 3257,
+      "sha256": "2d3de2c84b096ca1c43d1e71f1a2c0f0a8986200e8b1348969f84fcd4f73d5b2"
+    },
+    {
+      "path": "battle_results/index.json",
+      "bytes": 45385,
+      "sha256": "42e39c7bf1ac7c9bf518df55f867036cd445d244b9a05c218bc1a683595a3ce5"
+    },
+    {
+      "path": "battle_results/ppo_duration_existing/battle_pairwise.csv",
+      "bytes": 723,
+      "sha256": "a3ad796d7d9623df2d1e653ed4e4a5129c759d5e5d21c349f1828e9aed48ca7f"
+    },
+    {
+      "path": "battle_results/ppo_duration_existing/battle_ranking.csv",
+      "bytes": 1795,
+      "sha256": "335de19474dbd075e0240166fe065ff66f83bc35fd58f1ecb21b6c6ce3e55db1"
+    },
+    {
+      "path": "battle_results/ppo_duration_existing/battle_report.json",
+      "bytes": 6684,
+      "sha256": "091acb8052e1c9ae6bf7a1d7f08b07e98ab8cc9a9394a610ef5b05d7a855e577"
+    },
+    {
+      "path": "battle_results/ppo_vs_baseline/battle_pairwise.csv",
+      "bytes": 386,
+      "sha256": "b43324124d2ece9858030f9e2b82a617f50021d80d93e93a3c3afb84d9aa4814"
+    },
+    {
+      "path": "battle_results/ppo_vs_baseline/battle_ranking.csv",
+      "bytes": 975,
+      "sha256": "a8ce653bd53f952e352ebe56faebc43a92056fc806aa04b921e20b60467cf469"
+    },
+    {
+      "path": "battle_results/ppo_vs_baseline/battle_report.json",
+      "bytes": 3246,
+      "sha256": "b634b59d0b45efb01a327ee95759feb6fca1ec2591e91e0b774be2d571a300fa"
+    },
+    {
+      "path": "battle_results/README.md",
+      "bytes": 10773,
+      "sha256": "aca51c8ce5476b679ff3eb501b1bcf7e40be3fb866af8e2772ae4341d951510e"
+    },
+    {
+      "path": "battle_results/south_8h_checkpoint_league/battle_pairwise.csv",
+      "bytes": 1857,
+      "sha256": "caeb4cc2dba5b9b249bf493382cef8483774158d72243e6611c1a89c43432d7e"
+    },
+    {
+      "path": "battle_results/south_8h_checkpoint_league/battle_ranking.csv",
+      "bytes": 2838,
+      "sha256": "ffaa00aece9e18bd2df0bfea7e7cc1aef77a646faee1585506900e8a189df251"
+    },
+    {
+      "path": "battle_results/south_8h_checkpoint_league/battle_report.json",
+      "bytes": 13109,
+      "sha256": "9d2ea4fe18147246bd806780919174ff09dae0eeadadac222846b0e86f8e4736"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t0_0.0h/battle_pairwise.csv",
+      "bytes": 396,
+      "sha256": "446a0a4c9bba7ae9e81d002f97c878b175fa6be3fd2feeeeb4a3b7d8b0115d4a"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t0_0.0h/battle_ranking.csv",
+      "bytes": 1411,
+      "sha256": "f20f091c26f8a4553b6c96bcee814e935dea676dcbd0a1fd09eafac638ae387f"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t0_0.0h/battle_report.json",
+      "bytes": 4842,
+      "sha256": "7c9ad4ac894f23ecab70a967ceb81ee3e3747824501f80fb16c04914bc16ceda"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t1_2.0h/battle_pairwise.csv",
+      "bytes": 397,
+      "sha256": "9bc5d9a1c437f5dffb81ff0f53ab72a7524636ccbf4de25b44f447646854785b"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t1_2.0h/battle_ranking.csv",
+      "bytes": 1389,
+      "sha256": "42b4eea88ba236f0378caa5e7fa403a9457c764f6af23e67c53f1ae31e927ccb"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t1_2.0h/battle_report.json",
+      "bytes": 4821,
+      "sha256": "b9abf07ff64027505687dfd470aa529f3a5aef6931532fa1457c21db06f420ab"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t2_4.0h/battle_pairwise.csv",
+      "bytes": 397,
+      "sha256": "2cdd74763a6bbd0071bb4244031196d376169549262d3bb4e8e53ed5f85cb1e0"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t2_4.0h/battle_ranking.csv",
+      "bytes": 1421,
+      "sha256": "1c77b6d7539267e8c115c0c768646bd1045e67081f3b2e77a87fe2001e14c50a"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t2_4.0h/battle_report.json",
+      "bytes": 4853,
+      "sha256": "4937a9f5fddc7de968557a3d8b9570839157659f9f0245ddaa181a4d616b0ae0"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t3_6.0h/battle_pairwise.csv",
+      "bytes": 393,
+      "sha256": "e1342c13fe5767568ec2f27335d68167691ee0748d22ecb9a2f3e675cf5af703"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t3_6.0h/battle_ranking.csv",
+      "bytes": 1411,
+      "sha256": "926df3e25d0a8d3165e03f6743b5c715cd2b2fb1030ededc81731233099f643c"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t3_6.0h/battle_report.json",
+      "bytes": 4839,
+      "sha256": "ef23e9e43e121f4950a7caa8a10cf183c79dd29bc0e5ee69934779825bac82f8"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t4_8.0h/battle_pairwise.csv",
+      "bytes": 396,
+      "sha256": "cf4c7e3d0d725200a7d48635bcad24366556b53336e1474498ef30e370ffd682"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t4_8.0h/battle_ranking.csv",
+      "bytes": 1423,
+      "sha256": "ddf424a0d0af0d7ae7bf8511e104de44868691d38aa9f6d3b380d9feabd22c1c"
+    },
+    {
+      "path": "battle_results/south_8h_vs_copilot/t4_8.0h/battle_report.json",
+      "bytes": 4854,
+      "sha256": "01b8ea58cd8135d50ce7fdbb52f4c2156d20ce75f8899f2f063bdc8ae18c7d52"
+    },
+    {
+      "path": "battle_results/south_screen_20260909/battle_pairwise.csv",
+      "bytes": 389,
+      "sha256": "e4a7dd4bd5ea05f335c943a1f30331f3a1910eefbf345706174cc5c512f35650"
+    },
+    {
+      "path": "battle_results/south_screen_20260909/battle_ranking.csv",
+      "bytes": 1384,
+      "sha256": "941e73a7258d424b8f28cc61ffa53c287e1bd3e000b9af829e1012a29fd406e6"
+    },
+    {
+      "path": "battle_results/south_screen_20260909/battle_report.json",
+      "bytes": 4371,
+      "sha256": "eba9d03c0401aeff612f9511a2fdc9af68395bd6b06dde705638a3a6c0d5633d"
+    },
+    {
+      "path": "bot.py",
+      "bytes": 1514,
+      "sha256": "410f495aabf6b4cddc44743f25a525274e238fa65273ab1ad1ef8fb4276b07ff"
+    },
+    {
+      "path": "compare_copilot_model.py",
+      "bytes": 39027,
+      "sha256": "d53ebd120070dfc245bb6cf59caa130ebbeaa829f7bc8980427cec9a8ac3ab56"
+    },
+    {
+      "path": "compare_models.py",
+      "bytes": 6545,
+      "sha256": "5bc85e4317bc1187cd878ce43245a9f1e63061627adb7f0bc69fc2a01a13a911"
+    },
+    {
+      "path": "docs/ENVIRONMENT.md",
+      "bytes": 2376,
+      "sha256": "507e3e32c83397c1489f56d205cb3440dd457f3f47a2bae94788b246a6f3bfa4"
+    },
+    {
+      "path": "docs/images/gui.png",
+      "bytes": 119386,
+      "sha256": "36995a5c375431bfd56059cb8ed1990974eae6f84f096b2e06eed74800d726f4"
+    },
+    {
+      "path": "docs/PUBLISHING.md",
+      "bytes": 2574,
+      "sha256": "2fb349c8e3a639bb0f976d9d32680c5b23287b9b738123d371ac6f1ab1f01b5a"
+    },
+    {
+      "path": "docs/TRAINING.md",
+      "bytes": 3860,
+      "sha256": "9442f00647452566a4b0fd1b3ec62d4558d77c24a8632cca29f6f1b5a15e092a"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "bytes": 1585,
+      "sha256": "3e435941f7aad150a9121dbded3a126e95705f854b02cc90d802f7214dee0b1f"
+    },
+    {
+      "path": "gui/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "gui/game_controller.py",
+      "bytes": 7810,
+      "sha256": "23cd7d917658ea6c52585e69d3883ef627007a50227740a2b82810d0b1856825"
+    },
+    {
+      "path": "gui/game_window.py",
+      "bytes": 35598,
+      "sha256": "187651f08212e6cd6a344df00d728b1fd2e1153fce44621ab926de498212f2be"
+    },
+    {
+      "path": "gui/replay.py",
+      "bytes": 11764,
+      "sha256": "31c98b14f76b10782fde19324d98c4814fa12bdd805c61a4e03cba06695af6a6"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/__init__.py",
+      "bytes": 83,
+      "sha256": "4e4c822b956b3389bf07cd554936fd150c3ddd54e6ecdf39aeaf2331c1ffaaf7"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/akagiot/bot_akagiot.py",
+      "bytes": 1098,
+      "sha256": "3199f9729107daa29b7b9e369fad6aa228a719fc7251a3c62bc2c142eba6c620"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/akagiot/engine.py",
+      "bytes": 3836,
+      "sha256": "e4bb7006b077d741a9c59a72202f7f2ed1f0738c9d36fc8fb9542e1eb16d3d0b"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/bot.py",
+      "bytes": 5261,
+      "sha256": "2cff27d15d3ac761b0b66116cadb4cdc04f117a70627b84b7042a4ebc2922dc2"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/factory.py",
+      "bytes": 1277,
+      "sha256": "1711ed67a59b13f71edc7627a9e12c37e775cbe1243bd26a0c259234f333d828"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/bot_local.py",
+      "bytes": 2304,
+      "sha256": "90e0c9b8ae01472ce0698d3ceee7b924dce19eb9706a2663972e637198bfb535"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/engine.py",
+      "bytes": 4490,
+      "sha256": "4cf29a391d1354196b0907d17456fe7839403ec967233fa32d9c300c12ac0a8b"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/engine3p.py",
+      "bytes": 4533,
+      "sha256": "a0a2a6f094386bfd68db0b44b8d238fa13810b4acb9715858f293b0609cb10b3"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/model.py",
+      "bytes": 10202,
+      "sha256": "bd8b783fad94a97e749b766cb8bbcb2fb9608b7ee100b486cb4e087bf7b4a98f"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/model3p.py",
+      "bytes": 7739,
+      "sha256": "84835adbcedf635d3d2ee879e97f5f09067335fa74cec23f65af647bc24d1553"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mahjongtrio/__init__.py",
+      "bytes": 142,
+      "sha256": "29f012540bfa5f30096d10837910bc2d67a2bd34b416b8d0d7abe2371c74562e"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mahjongtrio/bot_mahjongtrio.py",
+      "bytes": 25866,
+      "sha256": "245cf731bb45cbddc8e4541063768d3e44497a5a480987f72e358467699e7c23"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mjapi/bot_mjapi.py",
+      "bytes": 6318,
+      "sha256": "42cab920ac0e84b7d2b6a25f3458af3594838e09ca08ae8c6f5ee928ccdfcd1f"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mjapi/mjapi.py",
+      "bytes": 5268,
+      "sha256": "b76b246c932ae3aaf8006ed86f65810f4425f47cfb734a807633efb7833789cd"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot_manager.py",
+      "bytes": 24089,
+      "sha256": "4ae162406b75317d527d5ada04018abc51887702f665cc4c5738f40fec9a3462"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/lan_str.py",
+      "bytes": 9909,
+      "sha256": "97afa36df225b475b87032af151414241f4751f18f68a15878057340b480b3b1"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/log_helper.py",
+      "bytes": 2246,
+      "sha256": "1435ba5a9cc4553b159a8ca07bd3be827c07c96cfc8f0552b318efef8502f8e7"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/mj_helper.py",
+      "bytes": 8885,
+      "sha256": "e09796546ae99ab72b46b8e43f72ed3f13dce891e00f085c3f312f98e85b8852"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/settings.py",
+      "bytes": 8140,
+      "sha256": "ddb33adae2624da8ce76628fba4c97641779c392346866d582cdedf315d653bc"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/utils.py",
+      "bytes": 10762,
+      "sha256": "52a180a62bdf3f70d390cf24f2fddb2cdcdcfd4ecdd0e3cfd049ee4ba35cca9d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/automation.py",
+      "bytes": 36591,
+      "sha256": "6acb914cd77c56f6f5759b6082513e403ab35377e871cee7d9e5f820c7f77794"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/browser.py",
+      "bytes": 22933,
+      "sha256": "6970cd734c114510e4b1f4070d8c29fbe233519c743a53bf7931727fde6af7b1"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/game_state.py",
+      "bytes": 28276,
+      "sha256": "faecdf2a731f8987d47d9939d113268771e407c10ea2f4c219d17fef89210476"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/img_proc.py",
+      "bytes": 4254,
+      "sha256": "91cb7ff91ee6556aaaa09ded2d89f82afd0613af1b27da9ed3ed0373f773ec2e"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/help_window.py",
+      "bytes": 5386,
+      "sha256": "67eef19cc9a05bb4c70bf936596cc130455d84b38d558808be8f39e183de6d1e"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/main_gui.py",
+      "bytes": 18737,
+      "sha256": "b656b2de9b46c10a6e0c2bab869a312524414362fac1432e617d64663da02cb2"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/settings_window.py",
+      "bytes": 19406,
+      "sha256": "5c46e7d6554677046180eb96097e0855be499db69071a364d8c7b3a07b10ba48"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/utils.py",
+      "bytes": 4422,
+      "sha256": "6b80358ebcc44615fb125043e9651b6e0fd1ccf70f72417c09fb06d1ed77b9b0"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/widgets.py",
+      "bytes": 12060,
+      "sha256": "b2dbd47eaaefad4eab051d8bdd7cbd98fecbd7e290b3ed8d76bd08a8ace6c876"
+    },
+    {
+      "path": "integrations/MahjongCopilot/libriichi3p/__init__.py",
+      "bytes": 2043,
+      "sha256": "5a7d3d9fa2561a8b6e5d9fe843fbe492fd259d6f6aa8a556c0ed3edf59bac49b"
+    },
+    {
+      "path": "integrations/MahjongCopilot/LICENSE",
+      "bytes": 98447,
+      "sha256": "a7e95c49d523f581cb8bac877ad1822f2822cb9a408a535800f4dc6be8cfcc68"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi.py",
+      "bytes": 11528,
+      "sha256": "051e9444f931bb67c5f566b1411afb9910dc14f1233e2d951b690a8c1d652f7c"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi.json",
+      "bytes": 664366,
+      "sha256": "5f3749b1694247705ddaf681fc6662a7e092ba127d25cd0fe1d00296ab1e154d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi.proto",
+      "bytes": 134098,
+      "sha256": "1b5be6ec9e6847647a8b12d12c78be3c0d7d26300050f92bd14fc6bc8336703a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi_pb2.py",
+      "bytes": 301728,
+      "sha256": "795394229ff1c83697c03fa895a99d68dda85f997bad2a1f57c40c3aecdc52fb"
+    },
+    {
+      "path": "integrations/MahjongCopilot/main.py",
+      "bytes": 1170,
+      "sha256": "7c738bfa021db02f81c2bc08a39cbd778730c8744325969850c1c754972e9a62"
+    },
+    {
+      "path": "integrations/MahjongCopilot/mitm.py",
+      "bytes": 9145,
+      "sha256": "2b956a5b1acfd01b7e401d10aeb117894ef6d03d41d3d9d4a6a99c9b3a7ac1b6"
+    },
+    {
+      "path": "integrations/MahjongCopilot/proxinject.py",
+      "bytes": 3515,
+      "sha256": "a27c70b5e52cf62853aa622fd681a2cebbc37d6a979df8ab20c6397e117ec8fa"
+    },
+    {
+      "path": "integrations/MahjongCopilot/README.md",
+      "bytes": 2016,
+      "sha256": "0646816dbce16c6bd7c678991ef640148c2587bb010b8cca431ce0d3441452e9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/exit.png",
+      "bytes": 7548,
+      "sha256": "137c9fde0b3c10dfd74bec3c67d7c671dcae053fc8647f2cf4f237f7a1a35870"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/gray.png",
+      "bytes": 448,
+      "sha256": "c43b4e76fa474b6d0b51460e4e43cc9f50c62f11beb8f53376c9845e4168fe7a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/green.png",
+      "bytes": 5454,
+      "sha256": "40d8b57031e900f77857251180f12528f2c40d8870bf5e38480e594fff71ce30"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/help.png",
+      "bytes": 34198,
+      "sha256": "3737905fbef90d40eeed7e47b6f0d6a68905eeada9832d5d5e75066bf4e73d40"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/help_update.png",
+      "bytes": 55808,
+      "sha256": "e78d5853e6195fa65c6ee8ea94045ae41407f248e098c47681079aca2983c051"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/icon.ico",
+      "bytes": 89185,
+      "sha256": "26dacce443c81cb0bf7571497c11551749601161b61033b39423c11675dde630"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/icon.png",
+      "bytes": 82423,
+      "sha256": "36dfe7757b04572aea7de758765451b8df19768ea59259a425d7147c1ea87366"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/log.png",
+      "bytes": 8555,
+      "sha256": "960708c2df187b2719ec467056b99b02613ba9a6b8c98a5daf20a81d9f17e9f4"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/mainmenu.png",
+      "bytes": 56687,
+      "sha256": "089fb10e7c6f7284bf9e21ada8eb4c3a83919020a587eaa303d30698c8dd18f0"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/mainmenu_mask.png",
+      "bytes": 3330,
+      "sha256": "6e342e69c6739a50dddb21c795528a7da2f4cce3b0cf8757aabdfaf541784a81"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/majsoul.png",
+      "bytes": 169273,
+      "sha256": "6faadec3401a017529d046b7c10d25f03efd525820d8bec2bb8b610138f94666"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/overlay.png",
+      "bytes": 5141,
+      "sha256": "2b9336098ead7ba81c15f347fed1383682396352124c6cd30de77f7160b88f79"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/play.png",
+      "bytes": 11571,
+      "sha256": "22022a19de28cffd683b5ef39faf29f6f23f7340d202523758bc6b358ed68486"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/ready.png",
+      "bytes": 1542,
+      "sha256": "a81c779aa0585c69e3f1b780771195a0cc383656f3a57218dc2badaf8af2dea5"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/red.png",
+      "bytes": 4702,
+      "sha256": "7bb89655035af44b6c55984ab87b174e97aa29e502be0f7bec45c6ad985470bb"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/settings.png",
+      "bytes": 13947,
+      "sha256": "425916919929309f75ace37a5f3c43b103d9710af8b6c90dd418e4d3908243e9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_mid.png",
+      "bytes": 8040,
+      "sha256": "dcc53d2956c74385f7b32f52293e7e5a5fc80aa1fae18c051c4af7e211a77774"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_off.png",
+      "bytes": 8204,
+      "sha256": "9e2c5c9b34aec71b3a6bfa0556151cbb9e3038cb8d5ed096a8dca13a5b2bb10a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_on.png",
+      "bytes": 8079,
+      "sha256": "40d00df115342d8f532544730cef90783cb4d81343ae1d89feb55d2cacb32c8f"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/yellow.png",
+      "bytes": 1954,
+      "sha256": "e0f2ba0ea2fa93b10c3298bb4d2957c844f65fee86f016d43f59b0ea2aa0693d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/settings.example.json",
+      "bytes": 394,
+      "sha256": "44de5fd9a66ec47afb8102f7748f8c05405e6cd7123136e4850fe16b7fe9c097"
+    },
+    {
+      "path": "integrations/MahjongCopilot/updater.py",
+      "bytes": 10560,
+      "sha256": "3bbaa482c7fcbb961cbccd2e27ba9fe24700ceb1158c6e0dbad4b0b9dd786262"
+    },
+    {
+      "path": "integrations/MahjongCopilot/version",
+      "bytes": 5,
+      "sha256": "29ef1be9a3a40608ee71e155eb871ca34630e23beee9af29441aba9d0ea76d54"
+    },
+    {
+      "path": "mahjong_env/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mahjong_env/caculate/rule.py",
+      "bytes": 45489,
+      "sha256": "bfa43d42937cdf4712d220fb425a2bd648d131372b5f0efd6e42f7209dde13a7"
+    },
+    {
+      "path": "mahjong_env/deal.py",
+      "bytes": 12504,
+      "sha256": "e896216305b757d1c2d7547d8988100ebed028a8801b815643e631e46095fe48"
+    },
+    {
+      "path": "mahjong_env/feature.py",
+      "bytes": 36156,
+      "sha256": "6c62155916c930fc8edfbc8073767714c0e6531db0751e1bc5cb156ee9713cda"
+    },
+    {
+      "path": "mahjong_env/game.py",
+      "bytes": 28995,
+      "sha256": "eda5f8fdee2d4cce3522126e8caa9a2d7360567c19c52679e3e6346c39dcbb08"
+    },
+    {
+      "path": "mahjong_env/match.py",
+      "bytes": 9634,
+      "sha256": "5711233336083f55a4209d896ac6dfe828888dab9538d32346526d5992621d51"
+    },
+    {
+      "path": "mahjong_env/scoring.py",
+      "bytes": 1995,
+      "sha256": "6f773c74dbcc17c3a2ad18f178226bfb880c5355f11589e6a82465e4df1fca3f"
+    },
+    {
+      "path": "mahjong_env/tile.py",
+      "bytes": 3194,
+      "sha256": "a2892d24c4b80205cb9c841bcac094e8f8e7b5e446dbdeeed897f06909fb9964"
+    },
+    {
+      "path": "mahjong_env/util.py",
+      "bytes": 9228,
+      "sha256": "0bfe703e6e1d8cf549e42e9367d06a7047d3f57f41fd84ea693dd059a5bf0c10"
+    },
+    {
+      "path": "main.py",
+      "bytes": 902,
+      "sha256": "8631f92806e396cb8a1c3dd3b13655072b1fb224af348327415946b02025e24f"
+    },
+    {
+      "path": "model.py",
+      "bytes": 9055,
+      "sha256": "81d0bfbf782c64a44a170103857b858f9fd937200bd6e3a59474bda1404a5d03"
+    },
+    {
+      "path": "ppo_train.py",
+      "bytes": 60222,
+      "sha256": "2a9556600d2e45f36d5f7981635ed78c1c7d6df601a2862ab65ab70dba57e9ff"
+    },
+    {
+      "path": "ppo_train_consistent_rules.py",
+      "bytes": 357,
+      "sha256": "9a0d641abfcd28e36841deac508c28742a50977a0161e8e4b27d12dbeca44a88"
+    },
+    {
+      "path": "ppo_train_rules.py",
+      "bytes": 245,
+      "sha256": "0d31568c502eac0083fdc9c979d55db4cb8e5d3f4a2466e8d5e27dfa355dc4e8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8141,
+      "sha256": "39e92f99bb4699da26f04d0b074fbaf7b803ca7595eccb6414f22fd8118fc66f"
+    },
+    {
+      "path": "requirements-copilot.txt",
+      "bytes": 191,
+      "sha256": "253002da9cdfbfe290daa40fe7efadcd05a909099492542872379774ab384c66"
+    },
+    {
+      "path": "requirements-training.txt",
+      "bytes": 34,
+      "sha256": "67df63a6cd7aa821fa06071b9941b146e63e605063202fd1ab90598e71028544"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 39,
+      "sha256": "e562a8db02cca1e0b0d29a1252ff1e2c1cbf87cae5bb07ac548e32e51f829d95"
+    },
+    {
+      "path": "run_autodl_archive_gate.py",
+      "bytes": 13420,
+      "sha256": "77602d1c2fe2c8440161093629563e65fbc45249f9a31abf050d2bad7eb2ebe8"
+    },
+    {
+      "path": "run_autodl_average_campaign.py",
+      "bytes": 9326,
+      "sha256": "c5fba9f3a7df00bf6b98778ada1e0963c68b04cc282e2816fb4fd93b5f230acb"
+    },
+    {
+      "path": "run_autodl_campaign.py",
+      "bytes": 6110,
+      "sha256": "77183276ed9443c171990f61cfc10b0c00e64b5f7d1a17edb3eb868402edd16f"
+    },
+    {
+      "path": "run_autodl_continued_rules_campaign.py",
+      "bytes": 3593,
+      "sha256": "e8058cd7cf1e799abde1e423a4cf60cef60a2022f3f3418955684b6700a73fea"
+    },
+    {
+      "path": "run_autodl_fixed_archive_campaign.py",
+      "bytes": 2495,
+      "sha256": "75ab267ec6f24cf4f4f4778d9dbd9ecb92f902cb94e26a0edec9d82a30c5ca96"
+    },
+    {
+      "path": "run_autodl_frozen_validation.py",
+      "bytes": 4089,
+      "sha256": "c0e9e6b7b34d42666088a38e9c75334edb413c78daf73c1542efc22492334a45"
+    },
+    {
+      "path": "run_autodl_generation_campaign.py",
+      "bytes": 10358,
+      "sha256": "fbd9b5bef78f6453bbff8670324261cfd84dd0ca65e6f74bda02b4f168fe4e8d"
+    },
+    {
+      "path": "run_autodl_long_generation_campaign.py",
+      "bytes": 10562,
+      "sha256": "f1d2be87860d7ed0b3f488e2f7e0d5dfd393459479edf28b6b3d557efd14bc1b"
+    },
+    {
+      "path": "run_autodl_long_rules_campaign.py",
+      "bytes": 4247,
+      "sha256": "d33429a30b55a2e5e3d16e0e9c0f34dc7430dac9b4c5654fbca203a8f80d7399"
+    },
+    {
+      "path": "run_autodl_observed_rules_campaign.py",
+      "bytes": 3723,
+      "sha256": "fde04305ab8133e7a29d3068246b9b84bb56890bcf57bfc2ac82bdbf9aa4d965"
+    },
+    {
+      "path": "run_autodl_rank_campaign.py",
+      "bytes": 7065,
+      "sha256": "cfd1d3c831fe64c24bc4623e4894abbff991cfeb570bc66fca68c06108321e76"
+    },
+    {
+      "path": "run_autodl_rules_archive_gate.py",
+      "bytes": 983,
+      "sha256": "65a5bacbd4eb13d9f38d473f94880359f17a9cbbe7ccac1946bfe3dce1895bc3"
+    },
+    {
+      "path": "run_autodl_rules_campaign.py",
+      "bytes": 3469,
+      "sha256": "867c7254f5838eb0f953a799988545bfa94b63cb5085e540b19e11cc545f051f"
+    },
+    {
+      "path": "run_autodl_training.py",
+      "bytes": 11913,
+      "sha256": "383aef4393e0c7b11d76841d192d4a919e543a5b3825c7ba62381c18177c7131"
+    },
+    {
+      "path": "run_day1_3_experiments.py",
+      "bytes": 25297,
+      "sha256": "81fd540dde1dfaafc35970f012a89dfc528a69b6c0f34cd64c7fd84ef307ceba"
+    },
+    {
+      "path": "run_mahjong_copilot.py",
+      "bytes": 1787,
+      "sha256": "c50894589868e68b7e9b4a3b363f2db70c90cfbd73cdc28fbb4556eb7d25e194"
+    },
+    {
+      "path": "run_ppo_8h_experiment.py",
+      "bytes": 16187,
+      "sha256": "e8eb2b65002b65adb11df0ab259f84c7444415596ca39ce1a1b05087de2bd659"
+    },
+    {
+      "path": "scripts/check_public_release.py",
+      "bytes": 7738,
+      "sha256": "6fedbe9d5d0f344d68bfec4c150d9ef35ca16b17c27361906adc0aea1b36c91f"
+    },
+    {
+      "path": "setup_mahjong_copilot.py",
+      "bytes": 1691,
+      "sha256": "9b2e995dee533298798ca767cd04c84aadd95db68c7085de21c484d411fe720e"
+    },
+    {
+      "path": "tests/test_analyze_ppo_history.py",
+      "bytes": 1116,
+      "sha256": "45d604850a09c02b77fe1add49181028c37d481ddca947b49561922e3a2b95f9"
+    },
+    {
+      "path": "tests/test_archive_gate.py",
+      "bytes": 5389,
+      "sha256": "c78b7801566dfb1358a1e030dfb307a608e446418c140d274df53a02e0220256"
+    },
+    {
+      "path": "tests/test_autodl_campaign.py",
+      "bytes": 1445,
+      "sha256": "6cf743b25fc9693c162c8cfdc620a7c059585ee117eccbe1676ec9b49a187e34"
+    },
+    {
+      "path": "tests/test_autodl_training.py",
+      "bytes": 3363,
+      "sha256": "8fff2fe3aa89020e64f900abab79d36a4fef91b7fc5954d704574de871b35d13"
+    },
+    {
+      "path": "tests/test_average_checkpoint.py",
+      "bytes": 1870,
+      "sha256": "bb5e6057e10526d68bd135b6716c2c4929e31162f7fea5e45970817e2e4d79c6"
+    },
+    {
+      "path": "tests/test_compare_copilot_model.py",
+      "bytes": 3513,
+      "sha256": "5ffdb766681fb6bd6bf344bad2a23a87bfbdb60e895aa8b1d05cd2e9bcfaa1eb"
+    },
+    {
+      "path": "tests/test_cuda_rollout.py",
+      "bytes": 1474,
+      "sha256": "38190a485bb26459217f231ae123e6570002c6f0a966033bed0807bc04b8e717"
+    },
+    {
+      "path": "tests/test_fixed_archive_campaign.py",
+      "bytes": 811,
+      "sha256": "5f07d5a639b196fb447a2a086fce45e7ad7745a43a3f07a50b4e1138bc0b9f6c"
+    },
+    {
+      "path": "tests/test_forced_forward.py",
+      "bytes": 2160,
+      "sha256": "41a9e6cf5f71bd5a9cfa74a9502a77029b3db792761dec591e1848d95baeca60"
+    },
+    {
+      "path": "tests/test_furiten.py",
+      "bytes": 5033,
+      "sha256": "a6e1d2e91f7c5ed9821338f4a8df37d618bee8f8abbefd0b577b3083c11ef16e"
+    },
+    {
+      "path": "tests/test_generation_campaign.py",
+      "bytes": 2789,
+      "sha256": "737c968e0bbe58dd81d8b7f47652ce2970d9c0b2b2d7d769ee61bdd75874f98f"
+    },
+    {
+      "path": "tests/test_hand_observation_sync.py",
+      "bytes": 2533,
+      "sha256": "5e6e7241cd15158916a782f6c668e788b7f7da3d5efa803a895136f50334c719"
+    },
+    {
+      "path": "tests/test_kan_limit.py",
+      "bytes": 2877,
+      "sha256": "7cbc2b433dd921d55b3848ef47cbca4f2e08a7b4f1f11f6f6f9c0744b78cf75f"
+    },
+    {
+      "path": "tests/test_last_tile_actions.py",
+      "bytes": 1711,
+      "sha256": "22301a7bddf1a7e47e231546067dbc2814cd73132616f445a174d90fbd6d34a1"
+    },
+    {
+      "path": "tests/test_mahjong_copilot_adapter.py",
+      "bytes": 2971,
+      "sha256": "94a495eb43cd0d0e11e8c2e84a67db0d67f36cb2550c863f8f6bde06b53c734a"
+    },
+    {
+      "path": "tests/test_parallel_env.py",
+      "bytes": 4125,
+      "sha256": "72b4575f31d1a9f1d2a3c0518b0f98e6d2685258c9e49a119cfc467688bab12b"
+    },
+    {
+      "path": "tests/test_policy_numerics.py",
+      "bytes": 1639,
+      "sha256": "e4334cf03ed463591d0f6f81427725a752317ecdf9c9268196797e3ad04ed5c1"
+    },
+    {
+      "path": "tests/test_ppo_support.py",
+      "bytes": 5512,
+      "sha256": "bced069479fbc4f498b86a97069805bcd6c16ec7393a8c325c3a50b69f785ce5"
+    },
+    {
+      "path": "tests/test_rule_fastpath.py",
+      "bytes": 2618,
+      "sha256": "7c4076707b98d8ab9433ee132754541194b19fbe98dde770e93c7528b2a1b082"
+    },
+    {
+      "path": "tests/test_rules_candidate_abortive.py",
+      "bytes": 4293,
+      "sha256": "9ffb3678929b2a7f6943ad969b9ede53371293868f3f6e50108006236fd9f731"
+    },
+    {
+      "path": "tests/test_rules_candidate_kan.py",
+      "bytes": 2581,
+      "sha256": "9497fe4dfbeb2541091649a6f17bec8db40ada8fccb8afe442894125ab63f558"
+    },
+    {
+      "path": "tests/test_rules_candidate_legality.py",
+      "bytes": 5224,
+      "sha256": "3f3c47174daa2b4488b8091f75c12aa84adf71d7bc4005d8af0b3f661d912596"
+    },
+    {
+      "path": "tests/test_rules_candidate_match.py",
+      "bytes": 5443,
+      "sha256": "31b4441f210db07cffa20dbf4b08c2676567c12b90b4aea2122e4672c1b8c349"
+    },
+    {
+      "path": "tests/test_rules_candidate_multi_ron.py",
+      "bytes": 5202,
+      "sha256": "4d4677ad3053e0f40f3881b9da3bb9b36b652a727c5d614ea6a26b4aab20cfa2"
+    },
+    {
+      "path": "tests/test_rules_candidate_runtime.py",
+      "bytes": 2869,
+      "sha256": "2d848f7fc9e59b520ddb69d2da3947f1300cb660ecdce03a07f783a95f302817"
+    },
+    {
+      "path": "tests/test_south_match.py",
+      "bytes": 4040,
+      "sha256": "bb61f865c65b528b24785b08154cbd53a68c43e661e8063a69c5c19e5a703e6c"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1159,
+      "sha256": "5b5b2f7df7dba6f64c3dcc3e050dbf42269ddb59a27411a069d8cf390d3e17f1"
+    },
+    {
+      "path": "train_all.py",
+      "bytes": 10486,
+      "sha256": "47d29eeb931babfe0c8d71eabbc5dfcd96508f61cc0ef541617208762cacf7d5"
+    },
+    {
+      "path": "train_match.py",
+      "bytes": 17075,
+      "sha256": "12207dead617e7e23a17d075b76feb21abcd765e6f293026850ac568df107505"
+    },
+    {
+      "path": "train_rich.py",
+      "bytes": 29173,
+      "sha256": "0343b7ccdecb49259330931f4de4848901c86729d7264de3220c77fa4191f8ac"
+    },
+    {
+      "path": "training/__init__.py",
+      "bytes": 38,
+      "sha256": "2822b329bfa2b7e0e41c0df7971779e61e529fe6819b5b0df1378d0830ffd1b2"
+    },
+    {
+      "path": "training/compare_candidate_abortive.py",
+      "bytes": 5222,
+      "sha256": "60272d536cd6b0c05c7b802791a0bffd4220205a43006a84b4e4e12eeab972ac"
+    },
+    {
+      "path": "training/compare_candidate_draw_flow.py",
+      "bytes": 7418,
+      "sha256": "4f11eaef0033e9c426825081719f1c2efa0c76268ddd073204c8fb220f9541f2"
+    },
+    {
+      "path": "training/compare_candidate_kan.py",
+      "bytes": 5634,
+      "sha256": "61da66169a36645ea2e2295b136590aeaa5618bb685f8602962e5ca27af32c59"
+    },
+    {
+      "path": "training/compare_candidate_legality.py",
+      "bytes": 5037,
+      "sha256": "f14a5105b771df61cb8ad8ce7d7d3f0f0465ba64d7f96c0ac6cdb45b51df7bf0"
+    },
+    {
+      "path": "training/compare_candidate_match_flow.py",
+      "bytes": 4938,
+      "sha256": "b14e02477242b9c3e3890e9ec6739a40c031872ee1c2dfbe4ff3a9d35bb36426"
+    },
+    {
+      "path": "training/compare_candidate_multi_ron.py",
+      "bytes": 5178,
+      "sha256": "94846b0088d2a42478b791459eac0598aea3909d3af60e624e58d821eae66f0f"
+    },
+    {
+      "path": "training/cuda_rollout.py",
+      "bytes": 2011,
+      "sha256": "508ce5be031cbc6f88fad42c1c6e603bbf02b5c3a74aa0dca5fa341d8bcf7584"
+    },
+    {
+      "path": "training/data.py",
+      "bytes": 8417,
+      "sha256": "0da0064fef2beb6a6edd25338acb61e61cbf75b219d1aa6bb4cdc8932ff60f2b"
+    },
+    {
+      "path": "training/diagnose_actor_objective.py",
+      "bytes": 9102,
+      "sha256": "ef3d3e33c8881db355f9a39efd0fdb65f7c1aea210651bf4836cddd9d8c26414"
+    },
+    {
+      "path": "training/diagnose_behavior_replay.py",
+      "bytes": 6431,
+      "sha256": "2f0f6ec8cf2e425c406e9b6b12d09aeb9fb31988f069cd43593b5e5c4c4eae66"
+    },
+    {
+      "path": "training/diagnose_credit_assignment.py",
+      "bytes": 6155,
+      "sha256": "f3c75b6e0f8f462bd86747f3ae63e383b8311cd6fdc6b551481ab627002cdb4b"
+    },
+    {
+      "path": "training/diagnose_critic_targets.py",
+      "bytes": 6946,
+      "sha256": "4b73e3ff9e274e61919ed756c79674643aeb91807345144bb8074f6d49edd607"
+    },
+    {
+      "path": "training/diagnose_learning.py",
+      "bytes": 6096,
+      "sha256": "2d3fa9b8284ef173c4e5b9c56e707a1efc9a89e5832024e0580b0e16408b3ba6"
+    },
+    {
+      "path": "training/diagnose_mortal_bridge.py",
+      "bytes": 6008,
+      "sha256": "19ac72572f108318fb417cd3cde22d0d64be1d91785840d945aee287570e18fa"
+    },
+    {
+      "path": "training/diagnose_policy.py",
+      "bytes": 4275,
+      "sha256": "2fad87c23a6b8b7765cf1c1523c5cbcf41f0b98640f685a7b33361e80e5d615b"
+    },
+    {
+      "path": "training/diagnose_terminal_value.py",
+      "bytes": 4900,
+      "sha256": "0181d6988b75a4ee70c6353953a3668acc7d8b4bfcf553d5b33ebb4534f0faf5"
+    },
+    {
+      "path": "training/evaluate.py",
+      "bytes": 3988,
+      "sha256": "522c79e17dbb52e18ed87c3bb91bd0daae4946393d7d481d7cf6f1a9b5234c32"
+    },
+    {
+      "path": "training/guarded_benchmark.py",
+      "bytes": 2192,
+      "sha256": "906ad29b1c9e3039ddd4dc23afeb5718aea29a1d5662ed087a63dc93c17a1120"
+    },
+    {
+      "path": "training/parallel_env.py",
+      "bytes": 19120,
+      "sha256": "2ed4422366631b826f37f2a0de688bfb0281b0f73fc6108640e0edbbd1fc70c0"
+    },
+    {
+      "path": "training/policy_numerics.py",
+      "bytes": 1893,
+      "sha256": "70f49450a53bd5ab9ff01e727e592e4e604716b26651570b1eaa338c222f8a47"
+    },
+    {
+      "path": "training/ppo_support.py",
+      "bytes": 2527,
+      "sha256": "2ca3ee77058e17902aa0a26dacaa726e8d650c947f37ab7bf4e4d8b8cec0fbb6"
+    },
+    {
+      "path": "training/profile_rollout.py",
+      "bytes": 6814,
+      "sha256": "f2f156914d460aa08aa63130b6ff7b8277701fae9f7f7ce88ba6663eb4c24da0"
+    },
+    {
+      "path": "training/replay_kan_failure.py",
+      "bytes": 3116,
+      "sha256": "fd3bf1832224763df44f631af167a15e1d91710ab89a3c19c99eab6f031d11a4"
+    },
+    {
+      "path": "training/rules_candidate_feature.py",
+      "bytes": 1365,
+      "sha256": "c579066919c488bd6f9106b57819aa2f7c0a3b8047b503bc2b4e1e7832f8da69"
+    },
+    {
+      "path": "training/rules_candidate_game.py",
+      "bytes": 33020,
+      "sha256": "4d0af3d95dd60bcce2d91ff9120261faa81cb88723c409f3f3b9557eef8f68c5"
+    },
+    {
+      "path": "training/rules_candidate_kan.py",
+      "bytes": 1243,
+      "sha256": "e22aec989334db22655889c591d7b1999c6f5c3a3e8880ece11eb2a4998a7f42"
+    },
+    {
+      "path": "training/rules_candidate_match.py",
+      "bytes": 11765,
+      "sha256": "d665ccc820abc8fe1af5f8d142a6238082779d9cddbb6662f3a719f48adb63b2"
+    },
+    {
+      "path": "training/rules_candidate_metrics.py",
+      "bytes": 2601,
+      "sha256": "76f3e64643044c958e3823e6ef3cb15442a5bc02d5ec11e9bcfba20bdfd61865"
+    },
+    {
+      "path": "training/rules_candidate_parallel.py",
+      "bytes": 19673,
+      "sha256": "908b11be9c04080b67d2a9eb5601db105393e2bbd320a0cf61e7c186e0579f00"
+    },
+    {
+      "path": "training/rules_candidate_ron_fixtures.py",
+      "bytes": 2508,
+      "sha256": "874f0b30339194846d43de43566604c3acc755c7b34bc6ff6baa42d78d039324"
+    },
+    {
+      "path": "training/rules_candidate_runtime.py",
+      "bytes": 3524,
+      "sha256": "7a1ce01687c7da1168edd2399677f5c526de04085c051cdf8a7974274cebbe46"
+    },
+    {
+      "path": "training/rules_candidate_scoring.py",
+      "bytes": 1249,
+      "sha256": "fbc5342c88c15260e217214f73eaf37613f5e6f0d2d4a53a8297458cb8f96d41"
+    },
+    {
+      "path": "training/validate_consistent_rollout.py",
+      "bytes": 5284,
+      "sha256": "a44aea66f5b0be8345c9dcda997adc5238307e0be2d1ab3b3c45680008fe53e7"
+    },
+    {
+      "path": "training/validate_rules_candidate.py",
+      "bytes": 5114,
+      "sha256": "261eaba6e0c15e12bc241bde940213ecdfbd6f26930d17970ded2f4f6355866d"
+    }
+  ]
+}

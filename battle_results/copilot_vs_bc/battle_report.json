@@ -1,0 +1,87 @@
+{
+  "completed": false,
+  "ranking_metric": "每次实际出场的平均点数收益",
+  "scoring": "雀魂段位三麻自摸损：荣和按标准日麻支付；自摸只收两家付款；每本场荣和200点、自摸每家100点；累计役满封顶单倍，役满可累计",
+  "secondary_metric": "零和收益：荣和=赢家+1/放铳者-1；自摸=赢家+1/另外两家各-0.5；流局=0",
+  "confidence": "平均点差使用95%正态近似；胜率使用 Wilson 区间",
+  "limitations": [
+    "当前环境没有完整半庄点数结算，因此不代表最终顺位率",
+    "当前环境一次只处理一个和牌者，不评估双响结果",
+    "独立小局的流局立直棒视为退回，不会带入下一局",
+    "Mortal 的九种九牌等内部环境未实现动作会按合法后备动作执行并计数"
+  ],
+  "rankings": [
+    {
+      "model_name": "MahjongCopilot-Mortal",
+      "hands": 3378,
+      "seed_groups": 1126,
+      "wins": 1071,
+      "win_rate": 0.31705150976909413,
+      "win_rate_ci95_low": 0.3015749016984385,
+      "win_rate_ci95_high": 0.3329437429363652,
+      "ron_wins": 527,
+      "tsumo_wins": 544,
+      "deal_ins": 517,
+      "deal_in_rate": 0.15304914150384843,
+      "draw_rate": 0.15896980461811722,
+      "invalid_actions": 0,
+      "average_points": 290.2309058614565,
+      "points_ci95_low": 75.90519026038587,
+      "points_ci95_high": 504.5566214625271,
+      "points_ci95_half_width": 214.32571560107064,
+      "average_winning_points": 8078.711484593838,
+      "mean_utility": 0.04840142095914742,
+      "utility_ci95_low": 0.026818243597402057,
+      "utility_ci95_high": 0.0699845983208928,
+      "utility_ci95_half_width": 0.021583177361745365,
+      "rank": 1
+    },
+    {
+      "model_name": "MahjongTrioAI",
+      "hands": 6756,
+      "seed_groups": 1126,
+      "wins": 1759,
+      "win_rate": 0.2603611604499704,
+      "win_rate_ci95_low": 0.2500353447122323,
+      "win_rate_ci95_high": 0.27095933841382813,
+      "ron_wins": 967,
+      "tsumo_wins": 792,
+      "deal_ins": 977,
+      "deal_in_rate": 0.1446121965660154,
+      "draw_rate": 0.15896980461811722,
+      "invalid_actions": 11,
+      "average_points": -145.11545293072825,
+      "points_ci95_low": -252.27831073126356,
+      "points_ci95_high": -37.95259513019293,
+      "points_ci95_half_width": 107.16285780053532,
+      "average_winning_points": 8360.261512222854,
+      "mean_utility": -0.02420071047957371,
+      "utility_ci95_low": -0.0349922991604464,
+      "utility_ci95_high": -0.013409121798701028,
+      "utility_ci95_half_width": 0.010791588680872682,
+      "rank": 2
+    }
+  ],
+  "pairwise": [
+    {
+      "model_a": "MahjongTrioAI",
+      "model_b": "MahjongCopilot-Mortal",
+      "paired_seed_groups": 1126,
+      "mean_point_difference_a_minus_b": -435.34635879218473,
+      "point_difference_ci95_low": -756.8349321937908,
+      "point_difference_ci95_high": -113.85778539057873,
+      "point_difference_ci95_half_width": 321.488573401606,
+      "mean_utility_difference_a_minus_b": -0.07260213143872114,
+      "utility_difference_ci95_low": -0.10497689748133919,
+      "utility_difference_ci95_high": -0.040227365396103096
+    }
+  ],
+  "comparison": {
+    "method": "相同牌山、三次座位轮换、A+A+B 与 A+B+B 镜像阵容",
+    "mortal_bridge": {
+      "mortal_decisions": 127021,
+      "fallbacks": 56
+    }
+  },
+  "publication_note": "Aggregate statistics only; checkpoints, paths, per-game records and diagnostic messages omitted."
+}

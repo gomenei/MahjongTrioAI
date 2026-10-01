@@ -1,0 +1,16 @@
+{
+  "model_type": "MahjongTrioAI",
+  "trio_model_file": "model/model.pt",
+  "trio_device": "auto",
+  "trio_action_mode": "greedy",
+  "auto_launch_browser": false,
+  "enable_automation": false,
+  "auto_join_game": false,
+  "enable_proxinject": false,
+  "enable_chrome_ext": false,
+  "upstream_proxy": "",
+  "akagi_ot_url": "",
+  "akagi_ot_apikey": "",
+  "mjapi_user": "",
+  "mjapi_secret": ""
+}
