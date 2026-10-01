@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from compare_copilot_model import (
+from evaluation.copilot import (
     GameSnapshot,
     reaction_to_local_action,
     response_parts,

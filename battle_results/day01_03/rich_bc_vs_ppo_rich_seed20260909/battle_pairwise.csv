@@ -1,2 +1,0 @@
-model_a,model_b,paired_seed_groups,mean_point_difference_a_minus_b,point_difference_ci95_low,point_difference_ci95_high,point_difference_ci95_half_width,mean_utility_difference_a_minus_b,utility_difference_ci95_low,utility_difference_ci95_high
-rich_bc,ppo_rich,10000,-360.535,-455.92659318832,-265.14340681168005,95.39159318831994,-0.024375,-0.033208599700190446,-0.015541400299809558

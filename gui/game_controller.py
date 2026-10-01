@@ -7,7 +7,7 @@ import torch.nn as nn
 
 from mahjong_env.game import ThreePlayerMahjong
 from gui.replay import ReplaySession
-from model import load_checkpoint_model
+from training.models import load_checkpoint_model
 
 
 class GameController:

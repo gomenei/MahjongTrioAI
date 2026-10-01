@@ -10,7 +10,7 @@
 - `bot/factory.py`：增加 MahjongTrioAI 模式；公开版按实际选择延迟导入其他机器人，使 MahjongTrioAI 模式无需 Mortal 原生库。
 - `common/settings.py`：支持本项目 checkpoint、设备和动作选择设置；公开版默认使用 `model/model.pt`。
 - `libriichi3p/__init__.py`：保留按平台/Python 版本寻找扩展的加载源码，未附扩展二进制。
-- 根目录 `setup_mahjong_copilot.py` 与 `run_mahjong_copilot.py`：独立环境安装与启动入口。
+- 根目录 `copilot.py --setup` 与 `copilot.py`：独立环境安装与启动入口。
 
 ## 配置
 

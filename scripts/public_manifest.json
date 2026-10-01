@@ -1,0 +1,884 @@
+{
+  "format_version": 1,
+  "review_date": "2026-10-01",
+  "scope": "Sanma source, GUI resources, training code, Copilot and sanitized aggregate battle reports",
+  "git_history_included": false,
+  "file_count": 175,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 109,
+      "sha256": "72ef26b2a7946458e2d820831099f2a560c41f83fe51584f3772336030c3534f"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 1158,
+      "sha256": "a7c0fe19105bffebb6f1ff4e321c00e4cb02cc2e387919e1a4e871789907b90e"
+    },
+    {
+      "path": "assets/tiles/0m.png",
+      "bytes": 30403,
+      "sha256": "9201751602f2610b0f40f8781f6538d7aaa31953065231c1202f4c0a5ee67841"
+    },
+    {
+      "path": "assets/tiles/0p.png",
+      "bytes": 49377,
+      "sha256": "4566466cba96925fa52c474a32ec1cac52450d89065e353b824eb6e2c0474067"
+    },
+    {
+      "path": "assets/tiles/0s.png",
+      "bytes": 31940,
+      "sha256": "255d4243505ab9889ca018a8a9b3d2c8ab54f3207dbc5bbb9674f6c303a48bf2"
+    },
+    {
+      "path": "assets/tiles/1m.png",
+      "bytes": 27302,
+      "sha256": "fadb07ee736915c46b38c9437a4108d015bdc5cfd9f6462a7e3ba54fb58b68b0"
+    },
+    {
+      "path": "assets/tiles/1p.png",
+      "bytes": 40171,
+      "sha256": "0e4e06206fce88e65dbf73d5909e8849da46b99efb1420bf7cd6b0a9edc11565"
+    },
+    {
+      "path": "assets/tiles/1s.png",
+      "bytes": 46534,
+      "sha256": "6aad12b94f997c13639ab8613d8551398771f7c39dcefd7fed92e31e5343ef3c"
+    },
+    {
+      "path": "assets/tiles/1z.png",
+      "bytes": 26634,
+      "sha256": "007d473462a00280a41a57fac650c17ac9c932344fa112b58be114a58c458191"
+    },
+    {
+      "path": "assets/tiles/2m.png",
+      "bytes": 28681,
+      "sha256": "ffc1dfaf922fb43baf0334525a7cbff956731862f557a87b4f1dd866b96ff02a"
+    },
+    {
+      "path": "assets/tiles/2p.png",
+      "bytes": 42556,
+      "sha256": "dd602b7364359e74e9cf23a07b9c37ac88cc292bf497f0569fb0c0434dc317ce"
+    },
+    {
+      "path": "assets/tiles/2s.png",
+      "bytes": 24506,
+      "sha256": "713032fa6ff9c5f7cf748b309e155ba8ecc5800ac053a89b224ab15d859b2ff4"
+    },
+    {
+      "path": "assets/tiles/2z.png",
+      "bytes": 26371,
+      "sha256": "fa69a4582ab634819057569a7e2b590f7caf14f1d51ce013a29fda402277e80b"
+    },
+    {
+      "path": "assets/tiles/3m.png",
+      "bytes": 29716,
+      "sha256": "549e260e42d7eee0ed194c93108b7f823b549b10863e0a2fda7f9904c0b6f896"
+    },
+    {
+      "path": "assets/tiles/3p.png",
+      "bytes": 35130,
+      "sha256": "954b8d6773f37f7219db3f12ba990dcea8e7b9d0835a8d995bf15e2318f0deca"
+    },
+    {
+      "path": "assets/tiles/3s.png",
+      "bytes": 27325,
+      "sha256": "8f35c3365699506038eef99b8591f7c380a26e070caa12d649c4246c5a634122"
+    },
+    {
+      "path": "assets/tiles/3z.png",
+      "bytes": 24979,
+      "sha256": "91c32064c389785103ccbd253c830e52d8bd19f85385e6215f188ca7827607da"
+    },
+    {
+      "path": "assets/tiles/4m.png",
+      "bytes": 29841,
+      "sha256": "0aeb79249b798f846bcb83cac4e3cd373ab2e382b52c32bf00528f6f36745da8"
+    },
+    {
+      "path": "assets/tiles/4p.png",
+      "bytes": 37526,
+      "sha256": "d9129a7adc2a6fa75c08d9a2f94111969f18535e01632c6b1b59fdb96f50af61"
+    },
+    {
+      "path": "assets/tiles/4s.png",
+      "bytes": 29512,
+      "sha256": "1ef564f2bd817c490f81f8701b5d24aa8fa3ccfea30c1b7fa4ee7d3ff7e96637"
+    },
+    {
+      "path": "assets/tiles/4z.png",
+      "bytes": 24005,
+      "sha256": "27cb5a818f1ec19388c4a2e9c43402d52580af05d6f35f2a656f9946a8577fa5"
+    },
+    {
+      "path": "assets/tiles/5m.png",
+      "bytes": 30507,
+      "sha256": "fb49608f139444177eb2563ce9824f20327150c46c0c5b85e1c4cc8604df0a6c"
+    },
+    {
+      "path": "assets/tiles/5p.png",
+      "bytes": 41752,
+      "sha256": "4d52bf027b4dda774c9ac20b50f543e58c56d70f42bd6b52ba8e210aa7c5ca5c"
+    },
+    {
+      "path": "assets/tiles/5s.png",
+      "bytes": 32239,
+      "sha256": "1334c94bece42d58506c90023d07ba7f692f2c4a5e8473908b10e85c9bdc45bd"
+    },
+    {
+      "path": "assets/tiles/5z.png",
+      "bytes": 18175,
+      "sha256": "480fc121a8916da87372aff0bf53c3a35658cf54a6d55126d2723c086bddeda3"
+    },
+    {
+      "path": "assets/tiles/6m.png",
+      "bytes": 29749,
+      "sha256": "c44e09409bb48db789ba78b3ca8cf1912959738d77d76baded6c43bdaebac33f"
+    },
+    {
+      "path": "assets/tiles/6p.png",
+      "bytes": 40214,
+      "sha256": "28a5e6dc347ba40a683349dcd0f75290b1ac584731936aa60bfcd41d080f27d4"
+    },
+    {
+      "path": "assets/tiles/6s.png",
+      "bytes": 34082,
+      "sha256": "f34945a613bdb7fa608443551ecbcbb629082c29804b7c17df6eedc4d5cb87d1"
+    },
+    {
+      "path": "assets/tiles/6z.png",
+      "bytes": 30067,
+      "sha256": "6a746146ef6d4abdc4cadbe37100e8fd56a7d31350a184e857cff7cf5ae087b9"
+    },
+    {
+      "path": "assets/tiles/7m.png",
+      "bytes": 28630,
+      "sha256": "0e16fc6650b91a49a95b2d19bdc4ec3dd54c09fc5e0985637f032d67e5a22045"
+    },
+    {
+      "path": "assets/tiles/7p.png",
+      "bytes": 43367,
+      "sha256": "89221063e5f44ebf2908dd2bdfdb2691df6083558b91657690fae17b898dbb90"
+    },
+    {
+      "path": "assets/tiles/7s.png",
+      "bytes": 32487,
+      "sha256": "d7c62ced9ba3ada31367439614eb7fcd7490be671a010cd236b69de686f71423"
+    },
+    {
+      "path": "assets/tiles/7z.png",
+      "bytes": 23392,
+      "sha256": "98ca4c5e16c451bf2d6c0fe51a528130bd269befab9fe0d55950649aa8019458"
+    },
+    {
+      "path": "assets/tiles/8m.png",
+      "bytes": 28680,
+      "sha256": "f655fd6afdf1058918ea512e57a4ef4f7ff072a90e222c8fb3de7f5c09c61f9f"
+    },
+    {
+      "path": "assets/tiles/8p.png",
+      "bytes": 45716,
+      "sha256": "fea31f4f559bac6613694c5a417dbb845121de1c9798f5a8cf75a8b441274281"
+    },
+    {
+      "path": "assets/tiles/8s.png",
+      "bytes": 35548,
+      "sha256": "1f3bd535da7b74b1f70328635f36acb790e9aa2144cc129d9743543c94c1bcd6"
+    },
+    {
+      "path": "assets/tiles/9m.png",
+      "bytes": 29465,
+      "sha256": "cd6dfc80c5a8dfd716f855d9c8ecd366d919e693dae400e07f68b200609e3aac"
+    },
+    {
+      "path": "assets/tiles/9p.png",
+      "bytes": 48417,
+      "sha256": "bc5bb6d4dee8e16b9e210517263aa294f33fe25f3b6421deec759c6b63f4af19"
+    },
+    {
+      "path": "assets/tiles/9s.png",
+      "bytes": 35574,
+      "sha256": "70db73c9eee1145f22d313a38c87630b9e273f475cabdbae882b84aacb31f172"
+    },
+    {
+      "path": "copilot.py",
+      "bytes": 3747,
+      "sha256": "69aeea0fcc8d35b002393d0bd63cc157cbdf12ee55f7661456d3b2b7b1436706"
+    },
+    {
+      "path": "docs/GUIDE.md",
+      "bytes": 4998,
+      "sha256": "ad650ad1ae49e78453c83b21776013d356d7eb539bb67d92fe38c8b679ae1158"
+    },
+    {
+      "path": "docs/images/gui.png",
+      "bytes": 119386,
+      "sha256": "36995a5c375431bfd56059cb8ed1990974eae6f84f096b2e06eed74800d726f4"
+    },
+    {
+      "path": "docs/THIRD_PARTY_NOTICES.md",
+      "bytes": 1173,
+      "sha256": "fe287242cdc351a2f675c609ea585f55df650e1b5bd2ad08d76b893011dac6b9"
+    },
+    {
+      "path": "evaluation/__init__.py",
+      "bytes": 51,
+      "sha256": "6849b320ba77092a10547b331782a122ce90a6b0af44a5a902c5475d3dc75425"
+    },
+    {
+      "path": "evaluation/__main__.py",
+      "bytes": 1110,
+      "sha256": "15d44006ca077cbc838d83863803d280ac737271fe144121b39a5dae9799367d"
+    },
+    {
+      "path": "evaluation/battle.py",
+      "bytes": 45953,
+      "sha256": "125d8a1786ae9325ad35321c7eb73a7a84f82ff93808c58bd687b54b1896c1f5"
+    },
+    {
+      "path": "evaluation/copilot.py",
+      "bytes": 40046,
+      "sha256": "50b5b3402cb6f758a61b947e9a4377346d6d2c2f6a548230bd1e61bd649ceefc"
+    },
+    {
+      "path": "gui/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "gui/game_controller.py",
+      "bytes": 8046,
+      "sha256": "30fba9620c62abdf04dcc9a580c51592d4802f66a95eca81e73f5533e9cf583d"
+    },
+    {
+      "path": "gui/game_window.py",
+      "bytes": 36398,
+      "sha256": "6831a6e3d27dd6eca8613ab0f5541c1603a9f1931251607f04e40086db2f95fa"
+    },
+    {
+      "path": "gui/replay.py",
+      "bytes": 12048,
+      "sha256": "616aff2e862eba8ac929827a6d149ce351b34da681d671e8560c39b590ceedb3"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/__init__.py",
+      "bytes": 86,
+      "sha256": "60044a459cd1d1f0dff1884ad719d74798a21ddf7a30967b0d8d3ea66281c4a9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/akagiot/bot_akagiot.py",
+      "bytes": 1133,
+      "sha256": "1ee61d5b966dd38f9d3adc5cf44423fc10e970bd50d3a9acda33db57cc9c967c"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/akagiot/engine.py",
+      "bytes": 3963,
+      "sha256": "44c8b87ceacf93d0d2f3ea0b5488712165590da94056d3e2865030e6954a5ef9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/bot.py",
+      "bytes": 5403,
+      "sha256": "382492a513218e6ad85fa0517f27b8f98cc7c9bcfc2a1d6d141265f3692701c6"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/factory.py",
+      "bytes": 1315,
+      "sha256": "d8ef2b32fc1acaea944cb1cd703d3e4cfe4942effac85624685ceeafd9650344"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/bot_local.py",
+      "bytes": 2360,
+      "sha256": "0d3a7628caa4ea7da9b180549d014b8e2c65659d8180fcd3b915a73787ab4db4"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/engine.py",
+      "bytes": 4615,
+      "sha256": "87081da5ac4b89b78379d787b46d40bb1c7a7d6bebd94e77f769c8090bc14155"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/engine3p.py",
+      "bytes": 4660,
+      "sha256": "18a2ed109dc233c7ffb8a77aab7125c1fb6a256d15a873ed6c6d764a0b4df5a6"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/model.py",
+      "bytes": 10494,
+      "sha256": "8b9e7aecc57458c92838633408f5a4b89fca23dce9722bb8205ad860172bdf6b"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/local/model3p.py",
+      "bytes": 7973,
+      "sha256": "c74039617b04c7de13f487c96e0e7eae3f95eecd4062309d209e5a35a11e5a70"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mahjongtrio/__init__.py",
+      "bytes": 147,
+      "sha256": "0573985a71a8e55fe31881141712c7271f2a4986fc83131e3649d1861cb0e7fa"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mahjongtrio/bot_mahjongtrio.py",
+      "bytes": 26557,
+      "sha256": "dab7584a6d2faccf04c2d0f9022529730531a81e0091ea59e9dba7809c3c1233"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mjapi/bot_mjapi.py",
+      "bytes": 6481,
+      "sha256": "e3fb5f1577c196d6a7bbc5c7e30f3424e7bc326719b119b1d3b9dc2fca92324e"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot/mjapi/mjapi.py",
+      "bytes": 5417,
+      "sha256": "7be00c9b30ba3faf4b67c5f09a5b51f0cbeb2466623b960b9decb6e874386dff"
+    },
+    {
+      "path": "integrations/MahjongCopilot/bot_manager.py",
+      "bytes": 24671,
+      "sha256": "fe0e217f6cd3695ac9c5177d448ba34dcee267f8ed2ca6b1056f4ccd5c022e79"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/lan_str.py",
+      "bytes": 10181,
+      "sha256": "d7a03886e29e9d6ab8aa469fa5b5e98718928a2a1ecb9587d48ffd41f946a9af"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/log_helper.py",
+      "bytes": 2308,
+      "sha256": "1fe003e82952622455464a5096ddbdb352bbc75518770c1ae73d4e175061d71d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/mj_helper.py",
+      "bytes": 9167,
+      "sha256": "43b1c9ed7a215406586c16db65e876df7829f493b494d3fd906dd8387c8741d9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/settings.py",
+      "bytes": 8307,
+      "sha256": "64950c9b83db6a5d1948b3f5ce5e7789224e45cb74babe34a6e8b9fb9ad6ab40"
+    },
+    {
+      "path": "integrations/MahjongCopilot/common/utils.py",
+      "bytes": 11069,
+      "sha256": "9450d9f8b7062c5d8fa1a5edc83e813a2236e02ea44866fdc383e5bb11025ada"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/automation.py",
+      "bytes": 37470,
+      "sha256": "e96368a3cf3dce0409d0be5a47cff94f6c511175e68d0997b555181cd4aabcca"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/browser.py",
+      "bytes": 23487,
+      "sha256": "b544efeb97223266f029d95ae1b9ce921e0d55fa7ece669cc7efe2488576228b"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/game_state.py",
+      "bytes": 28909,
+      "sha256": "b680d2c475c3bd49027ea6c13e320ebc4dc8bf3161d3ee43a10f6aee6ff814ae"
+    },
+    {
+      "path": "integrations/MahjongCopilot/game/img_proc.py",
+      "bytes": 4359,
+      "sha256": "abfef52afda1ad6ca76cc5ed802ae0f357b07b39848a6374ba810abeb54e64c0"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/help_window.py",
+      "bytes": 5516,
+      "sha256": "afb508fa6a12b217c8dde28663a549a071ecb0f6c5a001bd8d7d33b1487a2e15"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/main_gui.py",
+      "bytes": 19177,
+      "sha256": "22ca591f2cff56e952a827b658931e2a0a7216b5c8cc3b826cdd68071b4521bb"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/settings_window.py",
+      "bytes": 19795,
+      "sha256": "875a423532fb716a9bbc7628f968948e0cdfffcbd9b635c72809cf04756687c3"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/utils.py",
+      "bytes": 4552,
+      "sha256": "d9a19023a238535f4d943e86a020a73463d0da7dd6617d3d6e93e4840d16d0b3"
+    },
+    {
+      "path": "integrations/MahjongCopilot/gui/widgets.py",
+      "bytes": 12369,
+      "sha256": "a0a2183a7abef8df9ee5297db113bde72dd800a777345f23188e2dac30ae5968"
+    },
+    {
+      "path": "integrations/MahjongCopilot/libriichi3p/__init__.py",
+      "bytes": 2099,
+      "sha256": "4fd0c3e41b2b0e9c2f60ea288e40dd5a65db6947bca249f716c99819a6bc5e10"
+    },
+    {
+      "path": "integrations/MahjongCopilot/LICENSE",
+      "bytes": 98447,
+      "sha256": "a7e95c49d523f581cb8bac877ad1822f2822cb9a408a535800f4dc6be8cfcc68"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi.py",
+      "bytes": 11831,
+      "sha256": "bad1acfc6d2cce8591b8334759e7310eda4c626732d06f8504c16b19bdaed2f9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi.json",
+      "bytes": 664366,
+      "sha256": "5f3749b1694247705ddaf681fc6662a7e092ba127d25cd0fe1d00296ab1e154d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi.proto",
+      "bytes": 134098,
+      "sha256": "1b5be6ec9e6847647a8b12d12c78be3c0d7d26300050f92bd14fc6bc8336703a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/liqi_proto/liqi_pb2.py",
+      "bytes": 303497,
+      "sha256": "3a6b199ec5ce1a117a1a6a69563a87d7c8fe5f21ce1edc3b3426260b8e4c7bff"
+    },
+    {
+      "path": "integrations/MahjongCopilot/main.py",
+      "bytes": 1207,
+      "sha256": "d9253afbec68d3370d174e4103f04eac64962aa62ed4b419b5ab94e0d701ca71"
+    },
+    {
+      "path": "integrations/MahjongCopilot/mitm.py",
+      "bytes": 9389,
+      "sha256": "f404798f601c5bcd4d01c2708ec5a8391636f64a9ea76b76fd05ee18c9779bab"
+    },
+    {
+      "path": "integrations/MahjongCopilot/proxinject.py",
+      "bytes": 3608,
+      "sha256": "c77e5ad24394a2f94b29fd4d731bace1ee058a43d9acf2c3d0fa1311514c2d4c"
+    },
+    {
+      "path": "integrations/MahjongCopilot/README.md",
+      "bytes": 2021,
+      "sha256": "961b6121f25b4ba776775292b11efef41a4f010e2db90989d5ddbe0e44c62ba9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/exit.png",
+      "bytes": 7548,
+      "sha256": "137c9fde0b3c10dfd74bec3c67d7c671dcae053fc8647f2cf4f237f7a1a35870"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/gray.png",
+      "bytes": 448,
+      "sha256": "c43b4e76fa474b6d0b51460e4e43cc9f50c62f11beb8f53376c9845e4168fe7a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/green.png",
+      "bytes": 5454,
+      "sha256": "40d8b57031e900f77857251180f12528f2c40d8870bf5e38480e594fff71ce30"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/help.png",
+      "bytes": 34198,
+      "sha256": "3737905fbef90d40eeed7e47b6f0d6a68905eeada9832d5d5e75066bf4e73d40"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/help_update.png",
+      "bytes": 55808,
+      "sha256": "e78d5853e6195fa65c6ee8ea94045ae41407f248e098c47681079aca2983c051"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/icon.ico",
+      "bytes": 89185,
+      "sha256": "26dacce443c81cb0bf7571497c11551749601161b61033b39423c11675dde630"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/icon.png",
+      "bytes": 82423,
+      "sha256": "36dfe7757b04572aea7de758765451b8df19768ea59259a425d7147c1ea87366"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/log.png",
+      "bytes": 8555,
+      "sha256": "960708c2df187b2719ec467056b99b02613ba9a6b8c98a5daf20a81d9f17e9f4"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/mainmenu.png",
+      "bytes": 56687,
+      "sha256": "089fb10e7c6f7284bf9e21ada8eb4c3a83919020a587eaa303d30698c8dd18f0"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/mainmenu_mask.png",
+      "bytes": 3330,
+      "sha256": "6e342e69c6739a50dddb21c795528a7da2f4cce3b0cf8757aabdfaf541784a81"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/majsoul.png",
+      "bytes": 169273,
+      "sha256": "6faadec3401a017529d046b7c10d25f03efd525820d8bec2bb8b610138f94666"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/overlay.png",
+      "bytes": 5141,
+      "sha256": "2b9336098ead7ba81c15f347fed1383682396352124c6cd30de77f7160b88f79"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/play.png",
+      "bytes": 11571,
+      "sha256": "22022a19de28cffd683b5ef39faf29f6f23f7340d202523758bc6b358ed68486"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/ready.png",
+      "bytes": 1542,
+      "sha256": "a81c779aa0585c69e3f1b780771195a0cc383656f3a57218dc2badaf8af2dea5"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/red.png",
+      "bytes": 4702,
+      "sha256": "7bb89655035af44b6c55984ab87b174e97aa29e502be0f7bec45c6ad985470bb"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/settings.png",
+      "bytes": 13947,
+      "sha256": "425916919929309f75ace37a5f3c43b103d9710af8b6c90dd418e4d3908243e9"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_mid.png",
+      "bytes": 8040,
+      "sha256": "dcc53d2956c74385f7b32f52293e7e5a5fc80aa1fae18c051c4af7e211a77774"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_off.png",
+      "bytes": 8204,
+      "sha256": "9e2c5c9b34aec71b3a6bfa0556151cbb9e3038cb8d5ed096a8dca13a5b2bb10a"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/switch_on.png",
+      "bytes": 8079,
+      "sha256": "40d00df115342d8f532544730cef90783cb4d81343ae1d89feb55d2cacb32c8f"
+    },
+    {
+      "path": "integrations/MahjongCopilot/resources/yellow.png",
+      "bytes": 1954,
+      "sha256": "e0f2ba0ea2fa93b10c3298bb4d2957c844f65fee86f016d43f59b0ea2aa0693d"
+    },
+    {
+      "path": "integrations/MahjongCopilot/settings.example.json",
+      "bytes": 394,
+      "sha256": "44de5fd9a66ec47afb8102f7748f8c05405e6cd7123136e4850fe16b7fe9c097"
+    },
+    {
+      "path": "integrations/MahjongCopilot/updater.py",
+      "bytes": 10841,
+      "sha256": "edf92da877160d35347b1599ebbf32e16a7730c7adebd434460e27e2fb5b91cf"
+    },
+    {
+      "path": "integrations/MahjongCopilot/version",
+      "bytes": 5,
+      "sha256": "29ef1be9a3a40608ee71e155eb871ca34630e23beee9af29441aba9d0ea76d54"
+    },
+    {
+      "path": "mahjong_env/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "mahjong_env/caculate/rule.py",
+      "bytes": 45489,
+      "sha256": "bfa43d42937cdf4712d220fb425a2bd648d131372b5f0efd6e42f7209dde13a7"
+    },
+    {
+      "path": "mahjong_env/deal.py",
+      "bytes": 12567,
+      "sha256": "4f178b88bd836594e0a5fef6b7f6773494e072ce6750e89ea15c5dde8ef000cf"
+    },
+    {
+      "path": "mahjong_env/feature.py",
+      "bytes": 36628,
+      "sha256": "8c2d2697a66da9b20de93d0a45710fac3ad89f7f4b501a72d28c72eb52e6c959"
+    },
+    {
+      "path": "mahjong_env/game.py",
+      "bytes": 29220,
+      "sha256": "19e0aeb23b84c6c01d6d61f2798304b0309a5b3acad4b74f4e09dbf3806db6b2"
+    },
+    {
+      "path": "mahjong_env/match.py",
+      "bytes": 9917,
+      "sha256": "d6f1c883ec56cf86bcd924df4891e3e040b3ef2920668edb5cf8b6c452c69d04"
+    },
+    {
+      "path": "mahjong_env/scoring.py",
+      "bytes": 2072,
+      "sha256": "4db824e8e577daad1d92a7f4aa18b7ce890be3ef14932ba10c388a1ac137ee2f"
+    },
+    {
+      "path": "mahjong_env/tile.py",
+      "bytes": 3210,
+      "sha256": "93ea5258f37c880ce7991b918af62dde9499a1af231032e195f7d91285dcbbbd"
+    },
+    {
+      "path": "mahjong_env/util.py",
+      "bytes": 9290,
+      "sha256": "bc015e62449ff37c4404a61e91890b43704c164300af5a6031ca07aadf99673d"
+    },
+    {
+      "path": "main.py",
+      "bytes": 931,
+      "sha256": "3f1ac56e640fddfe2811754bcef5e824a58c0ef22f03ad829d1603b02e762114"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5222,
+      "sha256": "65758f0b2a248d75ac290e9c851653636086d03c3dd8908b2eb2fb8f78fb9300"
+    },
+    {
+      "path": "requirements/copilot.txt",
+      "bytes": 191,
+      "sha256": "253002da9cdfbfe290daa40fe7efadcd05a909099492542872379774ab384c66"
+    },
+    {
+      "path": "requirements/training.txt",
+      "bytes": 32,
+      "sha256": "025ee253f1dc19b891bad7e41189b9a5d705269035ff8a625ad12152abf43f66"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 39,
+      "sha256": "e562a8db02cca1e0b0d29a1252ff1e2c1cbf87cae5bb07ac548e32e51f829d95"
+    },
+    {
+      "path": "results/battles.json",
+      "bytes": 83002,
+      "sha256": "3834e6768d580ef74cef7cd1b83e252c0e1ad9a2b12c321fe45ecd9af8cac3c8"
+    },
+    {
+      "path": "results/pairwise.csv",
+      "bytes": 5602,
+      "sha256": "3bbbeb5d48205740a07963a71edeef14f19915aea1158f3b03e3bcfcb2919989"
+    },
+    {
+      "path": "results/rankings.csv",
+      "bytes": 16879,
+      "sha256": "b9d74cc471bc76ec7ba66d7eaf15f35ebd997bccc76a6c65f01a367d044773d6"
+    },
+    {
+      "path": "results/README.md",
+      "bytes": 2935,
+      "sha256": "384429f16734c6be59abad53eba1fe6b168d63c871241f7a4ed43fe3e754e16a"
+    },
+    {
+      "path": "scripts/check_public_release.py",
+      "bytes": 7723,
+      "sha256": "ce1fd7fa1b6db30ab64eab38b15e79c8109a41cbcc7d5e364e3064c15db02c5e"
+    },
+    {
+      "path": "tests/test_compare_copilot_model.py",
+      "bytes": 3599,
+      "sha256": "9ec5705a490699ff55406a0d51047c6a8466d51b9fd4e303b16f2ada519170ec"
+    },
+    {
+      "path": "tests/test_cuda_rollout.py",
+      "bytes": 1520,
+      "sha256": "8116885e49b0599cd5673080d917886d19c73cea260d508298e44955c78f7808"
+    },
+    {
+      "path": "tests/test_forced_forward.py",
+      "bytes": 2221,
+      "sha256": "ac8acd461f8ebe79702f4460829b52dc6481dd1686b0a8d859bccc7a2dd0f845"
+    },
+    {
+      "path": "tests/test_furiten.py",
+      "bytes": 5169,
+      "sha256": "2eda2121b077c618bafff17155f32acd606336f4287d71efe66a35e4f4ca9c6c"
+    },
+    {
+      "path": "tests/test_hand_observation_sync.py",
+      "bytes": 2533,
+      "sha256": "5e6e7241cd15158916a782f6c668e788b7f7da3d5efa803a895136f50334c719"
+    },
+    {
+      "path": "tests/test_kan_limit.py",
+      "bytes": 2950,
+      "sha256": "3e29fd40210244c54174c08f75ed5420776eb8c70c7b950d7dc69092e417c9a3"
+    },
+    {
+      "path": "tests/test_last_tile_actions.py",
+      "bytes": 1759,
+      "sha256": "31698360eee6ba2e504e561a3e1675e0b667049b7cb5018dd11ff3e7015ccaf4"
+    },
+    {
+      "path": "tests/test_mahjong_copilot_adapter.py",
+      "bytes": 3066,
+      "sha256": "b7e4817d726887768115139a93210f82b8024d0f2fade3aa47ecfddd236e9276"
+    },
+    {
+      "path": "tests/test_parallel_env.py",
+      "bytes": 4214,
+      "sha256": "97cc11d6c5141e767f03243865a4eede96fabc58bf8751443a36878866082d0a"
+    },
+    {
+      "path": "tests/test_policy_numerics.py",
+      "bytes": 1683,
+      "sha256": "23212eeb70520f8ce9def5298128979f00db776965cfa6660f2170d9d310efc5"
+    },
+    {
+      "path": "tests/test_ppo_support.py",
+      "bytes": 5639,
+      "sha256": "b08b09554ec10eb1c12da1640bba24ae9902b9ba8205084f0a86cc9c40c9c003"
+    },
+    {
+      "path": "tests/test_rule_fastpath.py",
+      "bytes": 2674,
+      "sha256": "0da8d936619927e76a474a806f74311402b35294525ed554498e0a7185a6c831"
+    },
+    {
+      "path": "tests/test_rules_candidate_abortive.py",
+      "bytes": 4402,
+      "sha256": "72dd1eff194e076cfc9e95c0fa128f6a996b88b52a397b80cce9c09ef4671d05"
+    },
+    {
+      "path": "tests/test_rules_candidate_kan.py",
+      "bytes": 2639,
+      "sha256": "ff5e386b7746500221adfd644a4dec319e3c5beebe892a4b8fe52e84585f0753"
+    },
+    {
+      "path": "tests/test_rules_candidate_legality.py",
+      "bytes": 5351,
+      "sha256": "857b4dcb5b2750b5c115ce9e798042db7a37544aff52d1b7d4a8a602409026d4"
+    },
+    {
+      "path": "tests/test_rules_candidate_match.py",
+      "bytes": 5605,
+      "sha256": "707afff682b3d8bec4cad9c53a3fe29fadf69772e70a1b411adee5450b0db88f"
+    },
+    {
+      "path": "tests/test_rules_candidate_multi_ron.py",
+      "bytes": 5324,
+      "sha256": "6eb2e49c599e189cc92cf6dc0cc77dcfe66db620efa670cbab06f256c77da2c6"
+    },
+    {
+      "path": "tests/test_rules_candidate_runtime.py",
+      "bytes": 2353,
+      "sha256": "d784b3a1446bea49f61bc7e47c51f7dc3af16c04c9c90512a3fb82be9eee9fae"
+    },
+    {
+      "path": "tests/test_south_match.py",
+      "bytes": 4151,
+      "sha256": "acedbc8a61bd6e067e15d8213ec3c39483fc9f122bb767d28380acfae0a8d97d"
+    },
+    {
+      "path": "training/__init__.py",
+      "bytes": 40,
+      "sha256": "21c166438ffaff35e7847bfa51d0a14721fb99542a946c2ba1d7cfdffb2903c3"
+    },
+    {
+      "path": "training/__main__.py",
+      "bytes": 1516,
+      "sha256": "a773afd6426c8ba7b92381a2651983ab54259c0c2532e0d439ed96199e8a5f5c"
+    },
+    {
+      "path": "training/cuda_rollout.py",
+      "bytes": 2061,
+      "sha256": "2dfaeb07216b35924b48bc9b59efa76221f939554e2e633a04fa363b463a10de"
+    },
+    {
+      "path": "training/evaluate.py",
+      "bytes": 4088,
+      "sha256": "75985903d371c2087767ac71a95a4d7fe2054e1b0cbafda2556c07f9f00a3278"
+    },
+    {
+      "path": "training/match_supervised.py",
+      "bytes": 17512,
+      "sha256": "26d82c21d8570cb3c8a9fae6150541f0b64178ac7145329c2a682d0277a5ad76"
+    },
+    {
+      "path": "training/models.py",
+      "bytes": 9305,
+      "sha256": "5cff7beb58eed5083905be6e30233eb348baae854e3556294e6661ad1cc8d9dc"
+    },
+    {
+      "path": "training/parallel_env.py",
+      "bytes": 19597,
+      "sha256": "6b45eafa9abe57a0f4d6272152b0e13179d75291849a7f8c17fef4f9b8157e41"
+    },
+    {
+      "path": "training/policy_numerics.py",
+      "bytes": 1945,
+      "sha256": "65535ccfce757c32d7b7ac51a5c8e443617ad39260548c80b5e8a8635b170f8c"
+    },
+    {
+      "path": "training/ppo.py",
+      "bytes": 61842,
+      "sha256": "923df881911d628c8fd318565b24b22aa839507a2e1bb3ec775bcfdaebf03328"
+    },
+    {
+      "path": "training/ppo_support.py",
+      "bytes": 2594,
+      "sha256": "1dfe5d6e5cdaaabf4a654280dc902436d6f91e469d282a48edc38f22a7168508"
+    },
+    {
+      "path": "training/rules_candidate_feature.py",
+      "bytes": 1397,
+      "sha256": "6c07284001bb142d9890511c3105c8de2cfc4edd7fc4d94ac9f0928bca9731cd"
+    },
+    {
+      "path": "training/rules_candidate_game.py",
+      "bytes": 33125,
+      "sha256": "25f0877df9d17637ce61e5d02fc5c90d665b17b714175e714dd0794d8113e0c5"
+    },
+    {
+      "path": "training/rules_candidate_kan.py",
+      "bytes": 1268,
+      "sha256": "1015a7bcb48a13c9205e1944026c65e2bab2891808b0c6c659e1eb35f6d9bfd9"
+    },
+    {
+      "path": "training/rules_candidate_match.py",
+      "bytes": 11790,
+      "sha256": "5244b7fb4bc84124a637badb4de1ca6066b9228c09f0b8089df1b4e00765471b"
+    },
+    {
+      "path": "training/rules_candidate_metrics.py",
+      "bytes": 2658,
+      "sha256": "c7b6e699a2c6319b0f6ce805ee19ff86bf69d217c82b481d41a57af2044b50c1"
+    },
+    {
+      "path": "training/rules_candidate_parallel.py",
+      "bytes": 19677,
+      "sha256": "7d69bacd9eb6c47e420f553fe275b683ce30ce9a46cc809a36ff73ad4e627d73"
+    },
+    {
+      "path": "training/rules_candidate_ron_fixtures.py",
+      "bytes": 2562,
+      "sha256": "8b1c8a606fb06b958fb7b6ee1f011720cc9b047a663d2992ec091f4b3d24203f"
+    },
+    {
+      "path": "training/rules_candidate_runtime.py",
+      "bytes": 3624,
+      "sha256": "bdd87781faada53ad087387f30e9069e2b90b9f0d6c3aa794e9319ef83378429"
+    },
+    {
+      "path": "training/rules_candidate_scoring.py",
+      "bytes": 1280,
+      "sha256": "08a189d903305ac9316e183cc48d3f35d77870cc09f35f606fff072ca62e2d0f"
+    },
+    {
+      "path": "training/supervised.py",
+      "bytes": 30602,
+      "sha256": "810a2363e5ed8adf96d34d4baf0a9e20c0c02ae451ee0fd195deff99ba87dbe0"
+    },
+    {
+      "path": "training/utils.py",
+      "bytes": 1262,
+      "sha256": "b17a4baedd6ffd4511daa5a16b4376f5fd214725e9c0a585a0f0470b8a4952f6"
+    }
+  ]
+}

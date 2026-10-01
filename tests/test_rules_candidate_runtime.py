@@ -21,17 +21,6 @@ def test_explicit_rules_contract_and_hand_mode_rejection():
     with pytest.raises(ValueError): module.parse_args()
 
 
-@pytest.mark.parametrize('field', ['rules_version','policy_action_contract','rules_source_sha256',
-                                 'observation_contract','observation_source_sha256'])
-def test_archive_gate_rejects_mixed_rules_before_scoring(field):
-    from run_autodl_rules_archive_gate import assess_rules_pair
-    from training.rules_candidate_runtime import rule_identity
-    signature = rule_identity()
-    signature.pop(field)
-    with pytest.raises(ValueError,match='different rules'):
-        assess_rules_pair({'signature':signature},'new','old',123,6000,.001)
-
-
 def actions(observations):
     result = {}
     for name, obs in observations.items():

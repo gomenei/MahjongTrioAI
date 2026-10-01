@@ -1,4 +1,4 @@
-# Python and editors
+# Python / editors
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -9,7 +9,7 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Weights, datasets, replay files and numeric caches
+# Local weights / datasets / replay files
 model/
 models/
 data/
@@ -30,7 +30,7 @@ JapaneseMahjong-master/
 *.i16
 *.mmap
 
-# Training/runtime output (public battle summaries are allowlisted below)
+# Training and evaluation output
 training_runs/
 ppo_runs/
 feature_runs/
@@ -38,8 +38,9 @@ shangrao_runs/
 artifacts/
 release/
 audit_results/
-logs/
+battle_results/
 log/
+logs/
 *.log
 *.jsonl
 *.ndjson
@@ -55,7 +56,7 @@ output.txt
 *.so
 *.exe
 
-# Credentials, certificates, captures and browser sessions
+# Credentials, captures and browser sessions
 .env
 .env.*
 !.env.example
@@ -86,18 +87,9 @@ fetch_*.py
 *crawler*.py
 *scraper*.py
 
-# Preserve curated aggregates; ignore all new raw evaluation output.
-/battle_results/*
-!/battle_results/README.md
-!/battle_results/index.json
-!/battle_results/**/
-/battle_results/**/*.json
-/battle_results/**/*.csv
-!/battle_results/index.json
-!/battle_results/**/battle_report.json
-!/battle_results/**/battle_ranking.csv
-!/battle_results/**/battle_pairwise.csv
-/battle_results/**/progress.json
-
-# Local-only folders
-/.git-public-check/
+# Only reviewed aggregate files belong in the public results directory.
+/results/*
+!/results/README.md
+!/results/battles.json
+!/results/rankings.csv
+!/results/pairwise.csv

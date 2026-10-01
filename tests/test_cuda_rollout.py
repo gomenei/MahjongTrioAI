@@ -3,8 +3,8 @@ import copy
 import pytest
 import torch
 
-from model import TileTransformer
-from ppo_train import ActorCritic
+from training.models import TileTransformer
+from training.ppo import ActorCritic
 from training.cuda_rollout import CudaRolloutCache
 
 

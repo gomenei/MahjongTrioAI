@@ -6,8 +6,8 @@ import numpy as np
 import torch
 from torch import nn
 
-from model import apply_action_mask
-from ppo_train import ActorCritic, Transition, build_ppo_batch, ppo_update
+from training.models import apply_action_mask
+from training.ppo import ActorCritic, Transition, build_ppo_batch, ppo_update
 from training.ppo_support import OpponentPool, masked_reference_kl
 
 

@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from battle_models import MatchTask, RunningGame, summarize_match
+from evaluation.battle import MatchTask, RunningGame, summarize_match
 from mahjong_env.feature import FeatureAgent
 from mahjong_env.match import HandResult, SouthMatch, noten_deltas
 

@@ -72,7 +72,7 @@ def resolve_env_workers(requested: int, capacity: int) -> int:
 
 
 def _build_wall(seed: int) -> List[Tile]:
-    """与 battle_models.build_wall 相同，但保持 worker 模块无循环依赖。"""
+    """与 evaluation.battle.build_wall 相同，但保持 worker 模块无循环依赖。"""
     wall: List[Tile] = []
     for suit in (Suit.Manzu, Suit.Pinzu, Suit.Souzu):
         for value in range(1, 10):

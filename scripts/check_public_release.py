@@ -13,7 +13,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST = "PUBLIC_MANIFEST.json"
+MANIFEST = "scripts/public_manifest.json"
 IGNORED_LOCAL = {".git", "__pycache__", ".pytest_cache", ".venv", ".venv-copilot"}
 PRIVATE_DIRS = {"model", "models", "data", "replays", "牌谱爬取", "browser_data",
                 "mitm_config", "log", "logs", "training_runs", "ppo_runs", "artifacts",
@@ -91,15 +91,12 @@ def check_file(name, payload, findings):
                 for item in value:
                     inspect(item)
         inspect(data)
-        if path.parts[0] == "battle_results":
-            if path.name == "battle_report.json":
-                if not data.get("rankings") or any(row.get("seed_groups", 0) < 1000 for row in data["rankings"]):
+        if name == "results/battles.json":
+            for experiment in data.get("experiments", []):
+                if not experiment.get("rankings") or any(row.get("seed_groups", 0) < 1000 for row in experiment["rankings"]):
                     findings.append((name, "battle seed groups below 1000"))
-                if any(row.get("paired_seed_groups", 0) < 1000 for row in data.get("pairwise", [])):
+                if any(row.get("paired_seed_groups", 0) < 1000 for row in experiment.get("pairwise", [])):
                     findings.append((name, "paired battle seed groups below 1000"))
-            elif path.name == "index.json":
-                if any(row.get("seed_groups", 0) < 1000 for row in data):
-                    findings.append((name, "battle index seed groups below 1000"))
 
 
 def main():

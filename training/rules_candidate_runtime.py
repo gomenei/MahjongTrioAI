@@ -23,7 +23,7 @@ def rule_identity():
 
 
 def install_training(module):
-    import battle_models
+    from evaluation import battle as battle_models
     install_evaluation(battle_models)
     module.SouthMatch = CandidateSouthMatch
     module.ParallelGamePool = ParallelGamePool

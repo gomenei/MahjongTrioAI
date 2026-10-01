@@ -1,2 +1,0 @@
-model_a,model_b,paired_seed_groups,mean_point_difference_a_minus_b,point_difference_ci95_low,point_difference_ci95_high,point_difference_ci95_half_width,mean_utility_difference_a_minus_b,utility_difference_ci95_low,utility_difference_ci95_high
-t0_0.0h,MahjongCopilot-Mortal,2000,86.825,-789.7360330248728,963.3860330248729,876.5610330248728,-0.02825,-0.06119574967766592,0.004695749677665912

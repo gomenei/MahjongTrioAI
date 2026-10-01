@@ -16,7 +16,7 @@ def seat_outcomes(game, seat):
 
 
 def summarize_candidate_match(item, game):
-    from battle_models import empty_model_result
+    from evaluation.battle import empty_model_result
     by_model = defaultdict(empty_model_result)
     for seat, model_index in enumerate(item.task.seat_models):
         values = by_model[model_index]

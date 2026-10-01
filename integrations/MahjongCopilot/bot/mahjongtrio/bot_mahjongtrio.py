@@ -27,7 +27,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from mahjong_env.feature import FeatureAgent  # noqa: E402
 from mahjong_env.tile import MeldType, Suit, Tile, Wind  # noqa: E402
-from model import load_checkpoint_model  # noqa: E402
+from training.models import load_checkpoint_model  # noqa: E402
 
 
 ACTION_SIZE = FeatureAgent.ACT_SIZE
